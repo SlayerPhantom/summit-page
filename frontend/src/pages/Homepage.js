@@ -1,23 +1,13 @@
 import React from "react";
 import CustomNavbar from "../components/CustomNavbar";
 import CustomFooter from "../components/CustomFooter";
-import { Container } from "react-bootstrap";
-import "../style.css";
-import { Button } from "react-bootstrap";
+import GoogleAuth from "../components/GoogleAuth";
+import { Container, Button } from "react-bootstrap";
 import Lottie from "react-lottie";
-import graphData from "../images/analytics.json";
 import computerData from "../images/sitting_at_computer.json";
+import "../style.css";
 
 export default function Homepage() {
-  const graphLottieData = {
-    loop: true,
-    autoplay: true,
-    animationData: graphData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   const computerLottieData = {
     loop: true,
     autoplay: true,
@@ -52,9 +42,7 @@ export default function Homepage() {
                 nothing will be the same Just another night is all that it takes
                 To understand the difference between lovers and fakes
               </h5>
-              <Button className="my-2 btn btn-blue mx-3">
-                Click Here To Get Access
-              </Button>
+              <GoogleAuth showLogin loginText={"Click Here to Get Access"} />
             </div>
           </div>
         </Container>
