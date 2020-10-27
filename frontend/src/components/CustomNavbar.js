@@ -1,16 +1,27 @@
 import React from "react";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "../style.css";
+import "../css/CustomNavbar.css";
 
 export default function CustomNavbar() {
   return (
     <Navbar className="header-navbar navbar navbar-expand-lg navbar-dark d-flex justify-content-between align-items-top w-100">
-      <Navbar.Brand href="#Home">Navbar</Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
-      </Nav>
+      <Navbar.Brand href="#Home">
+        <div className="row ml-2">
+          <h2
+            className="black"
+            style={{ margin: "0", padding: "0", fontFamily: "gotham" }}
+          >
+            UBREAK
+          </h2>
+          <h2
+            className="white"
+            style={{ margin: "0", padding: "0", fontFamily: "gotham" }}
+          >
+            IFIX
+          </h2>
+        </div>
+      </Navbar.Brand>
     </Navbar>
   );
 }

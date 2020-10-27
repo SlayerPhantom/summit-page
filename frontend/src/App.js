@@ -1,7 +1,7 @@
 import React from "react";
-import { Switch, BrowserRouter as Router, Route, Link } from "react-router";
+import { Switch, BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Homepage from "./pages/Homepage";
-import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 
 export default function App() {
