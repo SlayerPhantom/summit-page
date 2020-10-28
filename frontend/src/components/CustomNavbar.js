@@ -5,7 +5,7 @@ import "../css/CustomNavbar.css";
 
 export default function CustomNavbar() {
   return (
-    <Navbar className="header-navbar navbar navbar-expand-lg navbar-dark d-flex justify-content-between align-items-top w-100">
+    <Navbar className="header-navbar navbar navbar-expand-lg navbar-dark d-flex justify-content-between align-items-top">
       <Navbar.Brand href="#Home">
         <div className="row ml-2">
           <h2

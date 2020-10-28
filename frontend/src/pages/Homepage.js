@@ -2,7 +2,7 @@ import React from "react";
 import CustomNavbar from "../components/CustomNavbar";
 import CustomFooter from "../components/CustomFooter";
 import GoogleAuth from "../components/GoogleAuth";
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import computerData from "../images/sitting_at_computer.json";
 import "../style.css";
