@@ -43,10 +43,7 @@ export default function Homepage() {
               rows="4"
               cols="50"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              At w3schools.com you will learn how to make a website. They offer
-              free tutorials in all web development technologies.
-            </textarea>
+            ></textarea>
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -58,6 +55,7 @@ export default function Homepage() {
           </Button>
         </Modal.Footer>
       </Modal>
+
       <CustomFooter />
     </div>
   );
