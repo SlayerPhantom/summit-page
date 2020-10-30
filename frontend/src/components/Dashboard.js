@@ -9,8 +9,10 @@ import "../css/Dashboard.css";
 export default function Dashboard({
   items,
   showButton,
-  showImages = false,
+  showImages,
   buttonClick,
+  showSidebarButton,
+  sidebarButtonOnclick,
 }) {
   const [selectedItem, setSelectedItem] = useState({
     photo: "",
@@ -22,7 +24,13 @@ export default function Dashboard({
 
   return (
     <div className="d-flex" style={{ height: "75vh" }}>
-      <Sidebar items={items} onClick={setItem} />
+      <Sidebar
+        items={items}
+        onClick={setItem}
+        showSidebarButton={showSidebarButton}
+        sidebarButtonOnclick={sidebarButtonOnclick}
+      />
+
       {showImages && selectedItem.photo && (
         <Card className="cardImage" style={{ width: "80vw" }}>
           <Card.Body>

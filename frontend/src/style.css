@@ -1,24 +1,25 @@
-/* .bubble-background {
+.bubble-background {
   background-image: url("images/paint.png");
   background-position-x: center;
   background-position-y: center;
-} */
+}
 
-/* .bubble-background-about {
+.bubble-background-about {
   background-image: url("images/paint.png");
-} */
+  left: 15rem;
+}
 
-/* .bubble-background-how {
+.bubble-background-how {
   background-image: url("images/paint.png");
   background-position-x: center;
   background-position-y: center;
-} */
+}
 
-/* .bubble-background-form {
+.bubble-background-form {
   background-image: url("images/paint-light.png");
   background-position-x: center;
   background-position-y: center;
-} */
+}
 
 .bubble-background-form form {
   width: 75%;
@@ -83,8 +84,10 @@
 }
 
 .about-img {
-  width: 50%;
+  width: 20%;
   height: auto;
+  margin-left: 1rem;
+  padding: 0;
 }
 
 .news-text {
@@ -233,21 +236,9 @@ em {
   width: 25vw;
 }
 
-.bubble-text {
-  position: absolute;
-  width: 20vw;
-  margin-top: 8rem;
-  margin-left: 1rem;
-}
-
 .bubble-img {
   width: auto;
   height: 20rem;
-}
-
-.pink-filter {
-  filter: invert(54%) sepia(79%) saturate(4740%) hue-rotate(289deg)
-    brightness(105%) contrast(101%) opacity(0.5);
 }
 
 .dark-blue-filter {
@@ -513,21 +504,9 @@ em {
     top: 0;
     left: 0;
   }
-
-  .bubble-text {
-    margin-top: 7rem;
-    margin-left: 1rem;
-  }
 }
 
 @media only screen and (max-width: 768px) {
-  .bubble-text {
-    position: absolute;
-    width: 25vw;
-    margin-top: 7rem;
-    margin-left: 1rem;
-  }
-
   .circle {
     width: 20em;
     height: 20em;
@@ -577,7 +556,7 @@ em {
     height: auto;
   }
 
-  /* .bubble-background-about {
+  .bubble-background-about {
     background-image: url("images/paint.png");
     background-position-x: center;
     background-position-y: center;
@@ -587,16 +566,10 @@ em {
     background-image: url("images/paint.png");
     background-position-x: center;
     background-position-y: center;
-  } */
+  }
 
   .carousel-item .row {
     height: 50vh;
-  }
-
-  .bubble-text {
-    width: 60%;
-    margin-top: 8rem;
-    margin-left: 1rem;
   }
 
   .circle {
@@ -625,11 +598,6 @@ em {
 }
 
 @media only screen and (max-width: 499px) {
-  .bubble-text {
-    width: 80%;
-    margin-top: 8rem;
-    margin-left: 1rem;
-  }
   .who-row {
     width: 100vw !important;
   }
@@ -669,11 +637,7 @@ em {
   .year-table {
     font-size: small;
   }
-  .bubble-text {
-    width: 90%;
-    margin-top: 7.2rem;
-    margin-left: 1rem;
-  }
+
   .news-text {
     font-size: smaller;
     width: 80%;

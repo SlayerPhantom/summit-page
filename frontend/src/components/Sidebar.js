@@ -7,7 +7,12 @@ import { Tab, Nav, Button, Modal, ListGroup } from "react-bootstrap";
 
 const EVENTS_KEY = "events";
 
-export default function Sidebar({ items, onClick }) {
+export default function Sidebar({
+  items,
+  onClick,
+  showSidebarButton,
+  sidebarButtonOnclick,
+}) {
   const [activeKey, setActiveKey] = useState(EVENTS_KEY);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -23,6 +28,10 @@ export default function Sidebar({ items, onClick }) {
             <Nav.Link eventKey={EVENTS_KEY}>EVENTS</Nav.Link>
           </Nav.Item>
         </Nav> */}
+        {showSidebarButton && (
+          <Button onClick={sidebarButtonOnclick}>Dank</Button>
+        )}
+
         <Tab.Content className="border-right overflow-auto flex-grow-1">
           <Tab.Pane eventKey={EVENTS_KEY}>
             <ListGroup variant="flush" className="border-bottom">

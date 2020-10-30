@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import Speakers from "./pages/Speakers";
 import About from "./pages/About";
 import Events from "./pages/Events";
+import Announcements from "./pages/Announcements";
 
 export default function App() {
   return (
@@ -23,6 +24,9 @@ export default function App() {
         </Route>
         <Route path="/about" exact>
           <About />
+        </Route>
+        <Route path="/announcements" exact>
+          <Announcements />
         </Route>
         <Route path="/events" exact>
           <Events />
