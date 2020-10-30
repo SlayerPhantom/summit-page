@@ -6,7 +6,7 @@ import CustomFooter from "../components/CustomFooter";
 const items = [
   {
     photo: "https://i.imgur.com/Kkcfhm7.jpg",
-    name: "John",
+    name: "John Testing",
     description: "JOHNN",
   },
   {

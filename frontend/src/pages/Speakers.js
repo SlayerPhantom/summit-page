@@ -6,7 +6,7 @@ import CustomFooter from "../components/CustomFooter";
 const items = [
   {
     photo: "https://i.imgur.com/Kkcfhm7.jpg",
-    name: "John",
+    name: "John Speaker",
     description: "JOHNN",
   },
   {
@@ -26,7 +26,7 @@ export default function Speakers() {
     <div>
       <CustomNavbar />
 
-      <Dashboard items={items} />
+      <Dashboard items={items} showImages />
 
       <CustomFooter />
     </div>
