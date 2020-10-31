@@ -1,3 +1,33 @@
+.nav-image {
+  width: 5rem;
+}
+
+.header-navbar {
+  align-items: flex-start;
+}
+
+.profile-nav {
+  border-color: #3d52d5 !important;
+}
+
+.profile-nav-img {
+  background-color: white;
+  border-radius: 50px;
+}
+
+#navbarNavLoggedIn {
+  width: 24rem;
+}
+
+body {
+  font-family: "Signika", sans-serif;
+}
+
+i {
+  font-size: 2em !important;
+  margin: 0 0.5em;
+}
+
 .bubble-background {
   background-image: url("images/paint.png");
   background-position-x: center;
@@ -6,7 +36,6 @@
 
 .bubble-background-about {
   background-image: url("images/paint.png");
-  left: 15rem;
 }
 
 .bubble-background-how {
@@ -33,6 +62,21 @@
   padding-bottom: 0.7em;
 }
 
+.header-navbar {
+  background-color: #3d52d5 !important;
+  /* background: rgb(61,82,213) !important;
+  background: linear-gradient(90deg, rgba(61,82,213,1) 0%, rgba(255,255,255,1) 90%) !important; */
+}
+
+.footer-navbar {
+  background-color: #3d52d5;
+}
+
+.footer-img {
+  width: 50%;
+  height: auto;
+}
+
 .how-img {
   width: 20em;
   height: auto;
@@ -42,66 +86,21 @@
   color: white;
 }
 
-.black {
-  color: #272822;
-}
-
-.blue {
-  color: #3d52d5;
-}
-
-.blue-background {
-  background-color: #3d52d5;
-}
-
-.pink-grad-background {
-  background: rgb(255, 230, 252);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 230, 252, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-.pink-background {
-  background: #ffe6fc;
-}
-
-.media-row {
-  height: 20rem;
-  justify-content: center;
-  align-items: center;
-}
-
 .dot-img {
   width: auto;
   height: 13%;
 }
 
-.nyt-img {
-  width: auto;
-  height: 18%;
-}
-
 .about-img {
   width: 20%;
   height: auto;
-  margin-left: 1rem;
-  padding: 0;
+  margin-left: 5rem;
 }
 
 .news-text {
   color: white;
   width: 20rem;
   height: auto;
-}
-
-.media-dot img {
-  margin-bottom: 2em;
-}
-
-.her-campus .news-text {
-  margin-top: 2em;
 }
 
 .light-blue-background {
@@ -112,12 +111,8 @@
   color: #090c9b;
 }
 
-.pink {
-  color: #ffb9ed;
-}
-
 .links:hover {
-  color: #da2d2d;
+  color: #ffb9ed;
   text-decoration: none;
   transition: ease-in 0.3;
 }
@@ -241,44 +236,9 @@ em {
   height: 20rem;
 }
 
-.dark-blue-filter {
-  filter: invert(9%) sepia(52%) saturate(6546%) hue-rotate(257deg)
-    brightness(71%) contrast(107%) opacity(0.5);
-}
-
-.light-blue-filter {
-  filter: invert(45%) sepia(82%) saturate(1549%) hue-rotate(211deg)
-    brightness(91%) contrast(90%) opacity(0.5);
-}
-
-.dark-blue-news {
-  filter: invert(9%) sepia(52%) saturate(6546%) hue-rotate(257deg)
-    brightness(71%) contrast(107%);
-}
-
-.media-elite img {
-  width: 10rem;
-  height: 10rem;
-  margin-top: 1em;
-}
-
 .news-img {
   height: 20%;
   width: auto;
-}
-
-.bloomberg img {
-  margin-top: 5em;
-}
-
-.bloomberg .news-text {
-  margin-top: 0.8em;
-}
-
-.rolling-stones-img {
-  height: 30%;
-  width: auto;
-  margin-bottom: 0;
 }
 
 .media-dot img {
@@ -287,21 +247,10 @@ em {
   margin-top: 6.5em;
 }
 
-.rolling-stones img {
-  margin-top: 4em;
-}
-
-.media-nyt img {
-  margin-top: 5.2em;
-}
-.media-nyt .news-text {
-  margin-top: 0.5em;
-}
-
-.her-campus img {
-  margin-top: 5.5em;
-  height: 15%;
-  width: auto;
+.footer-links {
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
 }
 
 .news-links-carousel {
@@ -309,17 +258,6 @@ em {
 }
 
 .circle-img {
-  width: 100%;
-  height: auto;
-}
-
-/* stats */
-.stat-img {
-  width: 100%;
-  height: auto;
-}
-
-.stat-img-smaller {
   width: 100%;
   height: auto;
 }
@@ -493,10 +431,6 @@ em {
   .big-news-links-carousel {
     display: none;
   }
-
-  .carousel-item .row {
-    height: 30vh;
-  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -541,18 +475,8 @@ em {
     height: 120vh !important;
   }
 
-  .stat-img {
-    width: 100%;
-    height: auto;
-  }
-
-  .stat-img-smaller {
-    width: 100%;
-    height: auto;
-  }
-
   .about-img {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 
@@ -566,10 +490,6 @@ em {
     background-image: url("images/paint.png");
     background-position-x: center;
     background-position-y: center;
-  }
-
-  .carousel-item .row {
-    height: 50vh;
   }
 
   .circle {
@@ -604,11 +524,6 @@ em {
 }
 
 @media only screen and (max-width: 400px) {
-  .bubble-text {
-    width: 80%;
-    margin-top: 8rem;
-    margin-left: 1rem;
-  }
   .top-section {
     height: 130vh !important;
   }
@@ -631,29 +546,39 @@ em {
     height: 130vh !important;
   }
 
-  .date-table {
-    font-size: x-small;
-  }
-  .year-table {
-    font-size: small;
-  }
-
-  .news-text {
-    font-size: smaller;
-    width: 80%;
-    margin-top: 2rem;
-  }
-
   .how-container {
     height: 170vh !important;
   }
 }
 
-.glyphicon-calendar {
-  /* for the date picker */
-  font-size: 1em !important;
-}
-
 .alert {
   margin-bottom: 0 !important;
+}
+
+.footer {
+  background: url(./images/footer-bg.jpg);
+  padding-bottom: 35px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pdn-top-30 {
+  padding-top: 35px;
+}
+
+.backgroundWrapper {
+  background-image: url("images/default-image.jpg");
+  /* background-position-x: center;
+  background-position-y: center; */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imagestack {
+  background-image: url("images/default-image.jpg");
+  background-position-x: center;
+  background-position-y: center;
 }

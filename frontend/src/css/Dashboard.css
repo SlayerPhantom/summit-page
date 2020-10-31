@@ -1,9 +1,0 @@
-@media only screen and (max-width: 526px) {
-  .cardImage {
-    display: none;
-  }
-}
-
-.cardImage {
-  width: 80vw;
-}
