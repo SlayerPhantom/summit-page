@@ -5,6 +5,7 @@ import GoogleAuth from "../components/GoogleAuth";
 import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import computerData from "../images/sitting_at_computer.json";
+// import sunriseData from "../images/sunsummit.json";
 import "../style.css";
 
 export default function Homepage() {

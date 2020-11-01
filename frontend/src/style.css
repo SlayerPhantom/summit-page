@@ -111,8 +111,12 @@ i {
   color: #090c9b;
 }
 
+.links {
+  margin-left: 0.2rem;
+}
+
 .links:hover {
-  color: #ffb9ed;
+  color: red;
   text-decoration: none;
   transition: ease-in 0.3;
 }
@@ -558,6 +562,14 @@ em {
 .footer {
   background: url(./images/footer-bg.jpg);
   padding-bottom: 35px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.header {
+  background: url(./images/footer-bg.jpg);
+  padding-bottom: 0px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;

@@ -4,6 +4,8 @@ import CustomFooter from "../components/CustomFooter";
 import { Container } from "react-bootstrap";
 import "../style.css";
 import SpeakerCard from "../components/SpeakerCard";
+import Lottie from "react-lottie";
+import consultData from "../images/consolutation.json";
 
 const BillGates = {
   photo: "https://i.imgur.com/Kkcfhm7.jpg",
@@ -27,6 +29,15 @@ const MarkZuckerberg = {
 };
 
 export default function Speakers() {
+  const speakerData = {
+    loop: true,
+    autoplay: true,
+    animationData: consultData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div>
       <CustomNavbar />
@@ -50,21 +61,23 @@ export default function Speakers() {
       </div>
 
       <Container className="py-5 d-flex justify-content-center align-items-center flex-column">
-        <h4 className="col-lg-10 col-12 black text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
-          vulputate dignissim suspendisse in est ante in. Nec sagittis aliquam
-          malesuada bibendum arcu vitae elementum curabitur. Consectetur purus
-          ut faucibus pulvinar elementum integer enim neque. Nunc sed id semper
-          risus in hendrerit gravida rutrum. Ac odio tempor orci dapibus
-          ultrices in iaculis nunc. Quis commodo odio aenean sed adipiscing diam
-          donec. Sapien eget mi proin sed. Arcu vitae elementum curabitur vitae
-          nunc sed. Orci sagittis eu volutpat odio facilisis mauris sit amet
-          massa. Eget duis at tellus at urna. Mus mauris vitae ultricies leo
-          integer malesuada nunc vel risus. Sed odio morbi quis commodo odio
-          aenean sed adipiscing.
-          <br />
-        </h4>
+        <Container className="row top-section">
+          <div class="row vh-75 mb-5 top-section-2">
+            <div class="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
+              <Lottie options={speakerData} height={400} width={400} />
+            </div>
+            <div class="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
+              <h4 class="text-center black" style={{ fontFamily: "circular" }}>
+                Another night, another dream but always you It's like a vision
+                of love that seems to be true Another night another dream but
+                always you In the night I dream of love so true Just another
+                night, another vision of love You feel joy, you feel pain, 'cuz
+                nothing will be the same Just another night is all that it takes
+                To understand the difference between lovers and fakes
+              </h4>
+            </div>
+          </div>
+        </Container>
       </Container>
 
       <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">

@@ -41,7 +41,7 @@ export default function CustomFooter() {
         <div class="container">
           <div class="row pdn-top-30">
             <div class="order-md-1 order-2 col-md-12 mb-3 d-flex justify-content-center align-items-center white footer-links">
-              <h2 class="white">UBREAKIFIX</h2>
+              <h2 class="white">Contact Us</h2>
               <div class="row d-flex justify-content-center">
                 <a
                   className="white links"
