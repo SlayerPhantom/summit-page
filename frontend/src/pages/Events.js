@@ -52,39 +52,41 @@ export default function Events() {
         </Container>
       </div>
 
-      <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-        <EventCard
-          title={JetSki.name}
-          shortText={JetSki.shortText}
-          longText={JetSki.longText}
-        />
-        <EventCard
-          title={JetSki.name}
-          shortText={JetSki.shortText}
-          longText={JetSki.longText}
-        />
-        <EventCard
-          title={JetSki.name}
-          shortText={JetSki.shortText}
-          longText={JetSki.longText}
-        />
-      </div>
-      <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-        <EventCard
-          title={JetSki.name}
-          shortText={JetSki.shortText}
-          longText={JetSki.longText}
-        />
-        <EventCard
-          title={JetSki.name}
-          shortText={JetSki.shortText}
-          longText={JetSki.longText}
-        />
-        <EventCard
-          title={JetSki.name}
-          shortText={JetSki.shortText}
-          longText={JetSki.longText}
-        />
+      <div className="bubble-background-about">
+        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+          <EventCard
+            title={JetSki.name}
+            shortText={JetSki.shortText}
+            longText={JetSki.longText}
+          />
+          <EventCard
+            title={JetSki.name}
+            shortText={JetSki.shortText}
+            longText={JetSki.longText}
+          />
+          <EventCard
+            title={JetSki.name}
+            shortText={JetSki.shortText}
+            longText={JetSki.longText}
+          />
+        </div>
+        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+          <EventCard
+            title={JetSki.name}
+            shortText={JetSki.shortText}
+            longText={JetSki.longText}
+          />
+          <EventCard
+            title={JetSki.name}
+            shortText={JetSki.shortText}
+            longText={JetSki.longText}
+          />
+          <EventCard
+            title={JetSki.name}
+            shortText={JetSki.shortText}
+            longText={JetSki.longText}
+          />
+        </div>
       </div>
 
       <CustomFooter />

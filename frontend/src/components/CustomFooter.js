@@ -37,7 +37,7 @@ export default function CustomFooter() {
     // </footer>
 
     <footer>
-      <div class="footer">
+      <div class="footerblack">
         <div class="container">
           <div class="row pdn-top-30">
             <div class="order-md-1 order-2 col-md-12 mb-3 d-flex justify-content-center align-items-center white footer-links">

@@ -567,9 +567,19 @@ em {
   background-position: center center;
 }
 
+.footerblack {
+  background-color: #211a1e;
+  /* background-color: #353839; */
+  /* background-color: #110b11; */
+  padding-bottom: 0.75rem;
+  /* background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center; */
+}
+
 .header {
   background: url(./images/footer-bg.jpg);
-  padding-bottom: 0px;
+  padding-bottom: 20px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -593,4 +603,8 @@ em {
   background-image: url("images/default-image.jpg");
   background-position-x: center;
   background-position-y: center;
+}
+
+.redbutton {
+  background-color: red;
 }

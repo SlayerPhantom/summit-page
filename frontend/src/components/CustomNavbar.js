@@ -13,28 +13,8 @@ import "../css/CustomNavbar.css";
 
 export default function CustomNavbar() {
   return (
-    // <Navbar className="header-navbar navbar navbar-expand-lg navbar-dark d-flex justify-content-between align-items-top">
-    //   <Navbar.Brand>
-    //     <div className="row">
-    //       <h2 className="col-xs ml-3">UBREAKIFIX</h2>
-    //       <h4 className="col-xs ml-3 pt-2">Events</h4>
-    //       <h4 className="col-xs ml-3 pt-2">Speakers</h4>
-    //     </div>
-    //   </Navbar.Brand>
-    // </Navbar>
-
-    // <Navbar sticky="top" className="header">
-    //   <Navbar.Brand>
-    //     <div className="row ml-1">
-    //       <h4 className="col-xs white">UBREAKIFIX</h4>
-
-    //       <h4 className="col-xs ml-3 white">Events</h4>
-    //       <h4 className="col-xs ml-3 white">Speakers</h4>
-    //     </div>
-    //   </Navbar.Brand>
-    // </Navbar>
-
-    <Navbar className="header" expand="lg">
+    // <Navbar className="header" expand="lg">
+    <Navbar style={{ backgroundColor: "#DB3A34", height: "10vh" }} expand="lg">
       <Navbar.Brand className="ml-5" href="/">
         UBreakIFix
       </Navbar.Brand>
@@ -59,11 +39,6 @@ export default function CustomNavbar() {
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
-
-        {/* <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form> */}
       </Navbar.Collapse>
     </Navbar>
   );

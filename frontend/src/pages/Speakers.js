@@ -80,58 +80,60 @@ export default function Speakers() {
         </Container>
       </Container>
 
-      <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-        <SpeakerCard
-          photo={BillGates.photo}
-          name={BillGates.name}
-          text={BillGates.text}
-        />
-        <SpeakerCard
-          photo={ElonMusk.photo}
-          name={ElonMusk.name}
-          text={ElonMusk.text}
-        />
-        <SpeakerCard
-          photo={MarkZuckerberg.photo}
-          name={MarkZuckerberg.name}
-          text={MarkZuckerberg.text}
-        />
-      </div>
+      <div className="bubble-background-about mb-5">
+        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+          <SpeakerCard
+            photo={BillGates.photo}
+            name={BillGates.name}
+            text={BillGates.text}
+          />
+          <SpeakerCard
+            photo={ElonMusk.photo}
+            name={ElonMusk.name}
+            text={ElonMusk.text}
+          />
+          <SpeakerCard
+            photo={MarkZuckerberg.photo}
+            name={MarkZuckerberg.name}
+            text={MarkZuckerberg.text}
+          />
+        </div>
 
-      <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-        <SpeakerCard
-          photo={BillGates.photo}
-          name={BillGates.name}
-          text={BillGates.text}
-        />
-        <SpeakerCard
-          photo={ElonMusk.photo}
-          name={ElonMusk.name}
-          text={ElonMusk.text}
-        />
-        <SpeakerCard
-          photo={MarkZuckerberg.photo}
-          name={MarkZuckerberg.name}
-          text={MarkZuckerberg.text}
-        />
-      </div>
+        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+          <SpeakerCard
+            photo={BillGates.photo}
+            name={BillGates.name}
+            text={BillGates.text}
+          />
+          <SpeakerCard
+            photo={ElonMusk.photo}
+            name={ElonMusk.name}
+            text={ElonMusk.text}
+          />
+          <SpeakerCard
+            photo={MarkZuckerberg.photo}
+            name={MarkZuckerberg.name}
+            text={MarkZuckerberg.text}
+          />
+        </div>
 
-      <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-        <SpeakerCard
-          photo={BillGates.photo}
-          name={BillGates.name}
-          text={BillGates.text}
-        />
-        <SpeakerCard
-          photo={ElonMusk.photo}
-          name={ElonMusk.name}
-          text={ElonMusk.text}
-        />
-        <SpeakerCard
-          photo={MarkZuckerberg.photo}
-          name={MarkZuckerberg.name}
-          text={MarkZuckerberg.text}
-        />
+        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+          <SpeakerCard
+            photo={BillGates.photo}
+            name={BillGates.name}
+            text={BillGates.text}
+          />
+          <SpeakerCard
+            photo={ElonMusk.photo}
+            name={ElonMusk.name}
+            text={ElonMusk.text}
+          />
+          <SpeakerCard
+            photo={MarkZuckerberg.photo}
+            name={MarkZuckerberg.name}
+            text={MarkZuckerberg.text}
+          />
+        </div>
       </div>
 
       <CustomFooter />
