@@ -1,11 +1,12 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const passport = require('passport');
 const cors = require('cors');
 
 require('dotenv').config({ path: './config/config.env' });
+require('./config/passport')(passport);
 
 const app = express();
-
+app.use(passport.initialize());
 const { connectDB } = require('./config/db');
 
 app.use(express.json());

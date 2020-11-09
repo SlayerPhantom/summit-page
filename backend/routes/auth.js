@@ -9,9 +9,11 @@ router.get(
 
 router.get(
 	'/google/callback/',
-	passport.authenticate('google', { failureRedirect: '/failed' }),
+	passport.authenticate('google', {
+		failureRedirect: 'http://localhost:3000/',
+	}),
 	function (req, res) {
-		res.status(201).json({ ...req.user });
+		res.redirect('http://localhost:3000/speakers');
 	}
 );
 
