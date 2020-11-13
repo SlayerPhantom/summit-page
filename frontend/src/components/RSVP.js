@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FormControl, Button, TextField } from '@material-ui/core';
 
 export default function RSVP({ id_token, googleId }) {
   const [firstName, setFirstName] = useState("");
@@ -22,34 +23,11 @@ export default function RSVP({ id_token, googleId }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          First Name:
-          <input
-            type="text"
-            name="firstName"
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type="text"
-            name="lastName"
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <button onClick={handleSubmit}>Submit form</button>
-      </form>
-    </div>
+      <FormControl>
+          <TextField id="first-name-input" label="First Name" onChange={(e) => setFirstName(e.target.value)}>First Name</TextField>
+          <TextField id="last-name-input" label="Last Name" onChange={(e) => {setLastName(e.target.value)}}>Last Name</TextField>
+          <TextField id="email-input" label="Email" onChange={(e) => {setEmail(e.target.value)}}>Email address</TextField>
+          <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+      </FormControl>
   );
 }

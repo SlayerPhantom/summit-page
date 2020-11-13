@@ -6,6 +6,7 @@ import "../style.css";
 import SpeakerCard from "../components/SpeakerCard";
 import Lottie from "react-lottie";
 import consultData from "../images/consolutation.json";
+import Background from '../images/bg.png';
 
 const BillGates = {
   photo: "https://i.imgur.com/Kkcfhm7.jpg",
@@ -38,11 +39,16 @@ export default function Speakers() {
     },
   };
 
+  const style = {
+    backgroundImage:`url(${Background})`,
+    backgroundSize:'cover',
+  }
+
   return (
-    <div>
+    <div >
       <CustomNavbar />
 
-      <div className="backgroundWrapper">
+      <div style={style}>
         <Container>
           <Container
             className="row top-section justify-content-center align-middle"
@@ -62,12 +68,12 @@ export default function Speakers() {
 
       <Container className="py-5 d-flex justify-content-center align-items-center flex-column">
         <Container className="row top-section">
-          <div class="row vh-75 mb-5 top-section-2">
-            <div class="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
+          <div className="row vh-75 mb-5 top-section-2">
+            <div className="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
               <Lottie options={speakerData} height={400} width={400} />
             </div>
-            <div class="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
-              <h4 class="text-center black" style={{ fontFamily: "circular" }}>
+            <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
+              <h4 className="text-center black" style={{ fontFamily: "circular" }}>
                 Another night, another dream but always you It's like a vision
                 of love that seems to be true Another night another dream but
                 always you In the night I dream of love so true Just another
@@ -80,8 +86,8 @@ export default function Speakers() {
         </Container>
       </Container>
 
-      <div className="bubble-background-about mb-5">
-        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+      <div style={{backgroundColor:'rgb(220,220,220)', paddingBottom:'40px'}}>
+        <div className="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
           <SpeakerCard
             photo={BillGates.photo}
             name={BillGates.name}
@@ -99,7 +105,7 @@ export default function Speakers() {
           />
         </div>
 
-        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+        <div className="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
           <SpeakerCard
             photo={BillGates.photo}
             name={BillGates.name}
@@ -117,7 +123,7 @@ export default function Speakers() {
           />
         </div>
 
-        <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+        <div className="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
           <SpeakerCard
             photo={BillGates.photo}
             name={BillGates.name}

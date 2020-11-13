@@ -5,6 +5,11 @@ import GoogleAuth from "../components/GoogleAuth";
 import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import computerData from "../images/sitting_at_computer.json";
+import Background from '../images/bg.png';
+
+
+
+
 // import sunriseData from "../images/sunsummit.json";
 import "../style.css";
 
@@ -17,19 +22,22 @@ export default function Homepage() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
+  const style = {
+    backgroundImage:`url(${Background})`,
+    backgroundSize:'cover',
+  }
   return (
     <div>
       <CustomNavbar />
 
-      <div className="backgroundWrapper">
+      <div style={style}>
         <Container>
           <Container className="row top-section">
-            <div class="row vh-75 mb-5 top-section-2">
-              <div class="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
+            <div className="row vh-75 mb-5 top-section-2">
+              <div className="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
                 <Lottie options={computerLottieData} height={400} width={400} />
               </div>
-              <div class="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
+              <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
                 <h1
                   className="text-center black"
                   style={{ fontFamily: "circular" }}
@@ -37,7 +45,7 @@ export default function Homepage() {
                   Annual Summit
                 </h1>
                 <h5
-                  class="text-center black"
+                  className="text-center black"
                   style={{ fontFamily: "circular" }}
                 >
                   Another night, another dream but always you It's like a vision
@@ -53,16 +61,16 @@ export default function Homepage() {
           </Container>
         </Container>
 
-        {/* <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-          <img class="col-xs about-img" src={forestscape} />
-          <img class="col-xs about-img" src="{% static 'images/about.png' %}" />
-          <img class="col-xs about-img" src="{% static 'images/about.png' %}" />
+        {/* <div className="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+          <img className="col-xs about-img" src={forestscape} />
+          <img className="col-xs about-img" src="{% static 'images/about.png' %}" />
+          <img className="col-xs about-img" src="{% static 'images/about.png' %}" />
         </div> */}
       </div>
 
-      <div class="bubble-background-about">
-        <div class="container py-5 d-flex justify-content-center align-items-center flex-column">
-          <h4 class="col-lg-10 col-12 black text-center">
+      <div style={{backgroundColor:'rgb(220,220,220)'}}>
+        <div className="container py-5 d-flex justify-content-center align-items-center flex-column">
+          <h4 className="col-lg-10 col-12 black text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
             vulputate dignissim suspendisse in est ante in. Nec sagittis aliquam

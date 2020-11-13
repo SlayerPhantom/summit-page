@@ -9,7 +9,7 @@ export default function SpeakerCard({ photo, name, text }) {
   const handleClose = () => setShowModal(false);
 
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(220,220,220)'}}>
       <Card className="ml-5" style={{ width: "18rem" }}>
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>

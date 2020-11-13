@@ -44,8 +44,7 @@ export default function GoogleAuth({
   }
 
   return (
-    <div>
-      <div>
+      <div style={{margin: 'auto'}}>
         {showLogin && (
           <GoogleLogin
             clientId="899787207644-c93oqaoparu0hp2tb3uu0e48bg3td6mq.apps.googleusercontent.com"
@@ -72,6 +71,5 @@ export default function GoogleAuth({
           </div>
         )}
       </div>
-    </div>
   );
 }
