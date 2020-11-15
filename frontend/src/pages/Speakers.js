@@ -46,8 +46,6 @@ export default function Speakers() {
 
   return (
     <div>
-      <CustomNavbar />
-
       <div style={style}>
         <Container>
           <Container

@@ -43,8 +43,6 @@ export default function Homepage() {
 
   return (
     <div>
-      <CustomNavbar />
-
       <div style={style}>
         <Container>
           <Container className="row top-section">
@@ -70,16 +68,17 @@ export default function Homepage() {
                   'cuz nothing will be the same Just another night is all that
                   it takes To understand the difference between lovers and fakes
                 </h5>
-                {isAuthenticated ? (
-                  <GoogleLogout
-                    clientId="899787207644-st7cehta2q31e1sp8804vg0q8ro5t94s.apps.googleusercontent.com"
-                    buttonText="Signout of google"
-                    onLogoutSuccess={logout}
-                  ></GoogleLogout>
-                ) : (
-                  <GoogleAuth />
-                )}
-                {/* <GoogleAuth showLogin loginText={"Click Here to Get Access"} /> */}
+                <div className="mt-3 d-flex justify-content-center">
+                  {isAuthenticated ? (
+                    <GoogleLogout
+                      clientId="899787207644-st7cehta2q31e1sp8804vg0q8ro5t94s.apps.googleusercontent.com"
+                      buttonText="Signout of google"
+                      onLogoutSuccess={logout}
+                    ></GoogleLogout>
+                  ) : (
+                    <GoogleAuth />
+                  )}
+                </div>
               </div>
             </div>
           </Container>
@@ -127,8 +126,6 @@ export default function Homepage() {
           </h4>
         </div>
       </div>
-
-      <CustomFooter />
     </div>
   );
 }

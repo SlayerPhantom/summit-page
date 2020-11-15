@@ -38,8 +38,6 @@ export default function Events() {
 
   return (
     <div>
-      <CustomNavbar />
-
       <div style={style}>
         <Container>
           <Container
@@ -96,8 +94,6 @@ export default function Events() {
           />
         </div>
       </div>
-
-      <CustomFooter />
     </div>
   );
 }
