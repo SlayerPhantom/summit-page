@@ -1,15 +1,13 @@
 import React from 'react';
-import CustomNavbar from '../components/CustomNavbar';
-import CustomFooter from '../components/CustomFooter';
 import GoogleAuth from '../components/GoogleAuth';
+import { GoogleLogout } from 'react-google-login';
 import { Container } from 'react-bootstrap';
 import Lottie from 'react-lottie';
 import computerData from '../images/sitting_at_computer.json';
-import auth from '../auth/auth';
-// import sunriseData from "../images/sunsummit.json";
 import '../style.css';
 
 export default function Homepage(props) {
+	let isAuthenticated = localStorage.getItem('isAuthenticated') || false;
 	const computerLottieData = {
 		loop: true,
 		autoplay: true,
@@ -18,19 +16,29 @@ export default function Homepage(props) {
 			preserveAspectRatio: 'xMidYMid slice',
 		},
 	};
-
+	const logout = () => {
+		localStorage.removeItem('isAuthenticated');
+		localStorage.removeItem('email');
+		localStorage.removeItem('familyName');
+		localStorage.removeItem('givenName');
+		localStorage.removeItem('googleId');
+		localStorage.removeItem('imageUrl');
+		localStorage.removeItem('name');
+		localStorage.removeItem('token');
+		localStorage.removeItem('isRegistered');
+		isAuthenticated = false;
+		window.location.replace('/');
+	};
 	return (
 		<div>
-			<CustomNavbar />
-
 			<div className="backgroundWrapper">
 				<Container>
 					<Container className="row top-section">
-						<div class="row vh-75 mb-5 top-section-2">
-							<div class="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
+						<div className="row vh-75 mb-5 top-section-2">
+							<div className="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
 								<Lottie options={computerLottieData} height={400} width={400} />
 							</div>
-							<div class="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
+							<div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
 								<h1
 									className="text-center black"
 									style={{ fontFamily: 'circular' }}
@@ -38,7 +46,7 @@ export default function Homepage(props) {
 									Annual Summit
 								</h1>
 								<h5
-									class="text-center black"
+									className="text-center black"
 									style={{ fontFamily: 'circular' }}
 								>
 									Another night, another dream but always you It's like a vision
@@ -48,22 +56,26 @@ export default function Homepage(props) {
 									'cuz nothing will be the same Just another night is all that
 									it takes To understand the difference between lovers and fakes
 								</h5>
-								<GoogleAuth showLogin loginText={'Click Here to Get Access'} />
+								{isAuthenticated ? (
+									<GoogleLogout
+										clientId="899787207644-st7cehta2q31e1sp8804vg0q8ro5t94s.apps.googleusercontent.com"
+										buttonText="Signout of google"
+										onLogoutSuccess={logout}
+									></GoogleLogout>
+								) : (
+									<GoogleAuth />
+								)}
+
+								{/* <GoogleAuth showLogin loginText={'Click Here to Get Access'} /> */}
 							</div>
 						</div>
 					</Container>
 				</Container>
-
-				{/* <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-          <img class="col-xs about-img" src={forestscape} />
-          <img class="col-xs about-img" src="{% static 'images/about.png' %}" />
-          <img class="col-xs about-img" src="{% static 'images/about.png' %}" />
-        </div> */}
 			</div>
 
-			<div class="bubble-background-about">
-				<div class="container py-5 d-flex justify-content-center align-items-center flex-column">
-					<h4 class="col-lg-10 col-12 black text-center">
+			<div className="bubble-background-about">
+				<div className="container py-5 d-flex justify-content-center align-items-center flex-column">
+					<h4 className="col-lg-10 col-12 black text-center">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
 						vulputate dignissim suspendisse in est ante in. Nec sagittis aliquam
@@ -96,8 +108,6 @@ export default function Homepage(props) {
 					</h4>
 				</div>
 			</div>
-
-			<CustomFooter />
 		</div>
 	);
 }
