@@ -23,30 +23,40 @@ export default function EventCard({ title, text, host, when }) {
       <Card className="ml-5" style={{ width: "18rem" }}>
         <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{text}</Card.Text>
+          <div className="d-flex justify-content-center">
+            <Card.Title>{title}</Card.Title>
+          </div>
+          {/* <Card.Text>{text}</Card.Text> */}
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroupItem>Host: {host}</ListGroupItem>
           <ListGroupItem>When: {when}</ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <Button variant="primary" onClick={handleShow}>
-            RSVP
-          </Button>
+          <div className="d-flex justify-content-center">
+            <Button
+              variant="danger"
+              style={{ width: "50%" }}
+              onClick={handleShow}
+            >
+              More Info
+            </Button>
+          </div>
         </Card.Body>
       </Card>
 
       <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
+        <div className="d-flex justify-content-center text-center">
+          <Modal.Header>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
+        </div>
         <Modal.Body>{text}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="danger" onClick={handleClose}>
             Save Changes
           </Button>
         </Modal.Footer>
