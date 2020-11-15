@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import GoogleLogin from "react-google-login";
-import { GoogleLogout } from "react-google-login";
+
 import axios from "axios";
-import RSVP from "./RSVP";
 
 export default function GoogleAuth({
   showLogin,
@@ -10,9 +9,6 @@ export default function GoogleAuth({
   showLogout,
   logoutText,
 }) {
-  const [tokenObj, setToken] = useState({});
-  const [user, setUser] = useState(null);
-
   async function responseGoogle(response) {
     try {
       const {
@@ -24,52 +20,49 @@ export default function GoogleAuth({
         name,
       } = await response.profileObj;
       const { tokenObj } = response;
-      setToken(tokenObj);
-      setUser({ email, familyName, givenName, googleId, imageUrl, name });
-      if (user) {
-        console.log(user);
-        axios.post("/login", { ...user });
+      const user = { email, familyName, givenName, googleId, imageUrl, name };
+      localStorage.setItem("email", email);
+      localStorage.setItem("familyName", familyName);
+      localStorage.setItem("givenName", givenName);
+      localStorage.setItem("googleId", googleId);
+      localStorage.setItem("imageUrl", imageUrl);
+      localStorage.setItem("name", name);
+      localStorage.setItem("token", tokenObj.id_token);
+
+      localStorage.setItem("isAuthenticated", true);
+      if (process.env.NODE_ENV === "production") {
+        const res = await axios.post("/login", {
+          user,
+        });
+        localStorage.setItem("isRegistered", res.data.isRegistered);
+      } else {
+        const res = await axios.post("http://localhost:5000/login", user);
+
+        localStorage.setItem("isRegistered", res.data.isRegistered);
       }
-    } catch (err) {
-      console.log(err);
+      window.location.replace("/events");
+    } catch (error) {
+      console.error(error);
     }
   }
 
   function responseError(response) {
-    console.log(response);
-  }
-
-  function logout(response) {
-    setUser(null);
+    window.location.replace("/");
   }
 
   return (
-      <div style={{margin: 'auto'}}>
-        {showLogin && (
+    <div>
+      <div>
+        {
           <GoogleLogin
-            clientId="899787207644-c93oqaoparu0hp2tb3uu0e48bg3td6mq.apps.googleusercontent.com"
-            buttonText={loginText}
+            clientId="899787207644-st7cehta2q31e1sp8804vg0q8ro5t94s.apps.googleusercontent.com"
+            buttonText="Click here to get access"
             onSuccess={responseGoogle}
             onFailure={responseError}
             cookiePolicy={"single_host_origin"}
           />
-        )}
-        {showLogout && (
-          <GoogleLogout
-            clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-            buttonText={logoutText}
-            onLogoutSuccess={logout}
-          ></GoogleLogout>
-        )}
-        {user && (
-          <div>
-            <br />
-            <p>
-              email: {user.email} name: {user.name}
-            </p>
-            <RSVP id_token={tokenObj.id_token} googleId={user.googleId}></RSVP>
-          </div>
-        )}
+        }
       </div>
+    </div>
   );
 }

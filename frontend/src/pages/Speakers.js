@@ -6,7 +6,7 @@ import "../style.css";
 import SpeakerCard from "../components/SpeakerCard";
 import Lottie from "react-lottie";
 import consultData from "../images/consolutation.json";
-import Background from '../images/bg.png';
+import Background from "../images/bg.png";
 
 const BillGates = {
   photo: "https://i.imgur.com/Kkcfhm7.jpg",
@@ -40,12 +40,12 @@ export default function Speakers() {
   };
 
   const style = {
-    backgroundImage:`url(${Background})`,
-    backgroundSize:'cover',
-  }
+    backgroundImage: `url(${Background})`,
+    backgroundSize: "cover",
+  };
 
   return (
-    <div >
+    <div>
       <CustomNavbar />
 
       <div style={style}>
@@ -73,7 +73,10 @@ export default function Speakers() {
               <Lottie options={speakerData} height={400} width={400} />
             </div>
             <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
-              <h4 className="text-center black" style={{ fontFamily: "circular" }}>
+              <h4
+                className="text-center black"
+                style={{ fontFamily: "circular" }}
+              >
                 Another night, another dream but always you It's like a vision
                 of love that seems to be true Another night another dream but
                 always you In the night I dream of love so true Just another
@@ -86,7 +89,9 @@ export default function Speakers() {
         </Container>
       </Container>
 
-      <div style={{backgroundColor:'rgb(220,220,220)', paddingBottom:'40px'}}>
+      <div
+        style={{ backgroundColor: "rgb(220,220,220)", paddingBottom: "40px" }}
+      >
         <div className="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
           <SpeakerCard
             photo={BillGates.photo}
@@ -142,7 +147,23 @@ export default function Speakers() {
         </div>
       </div>
 
-      <CustomFooter />
+      <div class="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
+        <SpeakerCard
+          photo={BillGates.photo}
+          name={BillGates.name}
+          text={BillGates.text}
+        />
+        <SpeakerCard
+          photo={ElonMusk.photo}
+          name={ElonMusk.name}
+          text={ElonMusk.text}
+        />
+        <SpeakerCard
+          photo={MarkZuckerberg.photo}
+          name={MarkZuckerberg.name}
+          text={MarkZuckerberg.text}
+        />
+      </div>
     </div>
   );
 }

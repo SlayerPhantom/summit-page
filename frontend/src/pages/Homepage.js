@@ -2,18 +2,18 @@ import React from "react";
 import CustomNavbar from "../components/CustomNavbar";
 import CustomFooter from "../components/CustomFooter";
 import GoogleAuth from "../components/GoogleAuth";
+import { GoogleLogout } from "react-google-login";
 import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import computerData from "../images/sitting_at_computer.json";
-import Background from '../images/bg.png';
-
-
-
+import Background from "../images/bg.png";
 
 // import sunriseData from "../images/sunsummit.json";
 import "../style.css";
 
 export default function Homepage() {
+  let isAuthenticated = localStorage.getItem("isAuthenticated") || false;
+
   const computerLottieData = {
     loop: true,
     autoplay: true,
@@ -23,9 +23,24 @@ export default function Homepage() {
     },
   };
   const style = {
-    backgroundImage:`url(${Background})`,
-    backgroundSize:'cover',
-  }
+    backgroundImage: `url(${Background})`,
+    backgroundSize: "cover",
+  };
+
+  const logout = () => {
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("email");
+    localStorage.removeItem("familyName");
+    localStorage.removeItem("givenName");
+    localStorage.removeItem("googleId");
+    localStorage.removeItem("imageUrl");
+    localStorage.removeItem("name");
+    localStorage.removeItem("token");
+    localStorage.removeItem("isRegistered");
+    isAuthenticated = false;
+    window.location.replace("/");
+  };
+
   return (
     <div>
       <CustomNavbar />
@@ -55,7 +70,16 @@ export default function Homepage() {
                   'cuz nothing will be the same Just another night is all that
                   it takes To understand the difference between lovers and fakes
                 </h5>
-                <GoogleAuth showLogin loginText={"Click Here to Get Access"} />
+                {isAuthenticated ? (
+                  <GoogleLogout
+                    clientId="899787207644-st7cehta2q31e1sp8804vg0q8ro5t94s.apps.googleusercontent.com"
+                    buttonText="Signout of google"
+                    onLogoutSuccess={logout}
+                  ></GoogleLogout>
+                ) : (
+                  <GoogleAuth />
+                )}
+                {/* <GoogleAuth showLogin loginText={"Click Here to Get Access"} /> */}
               </div>
             </div>
           </Container>
@@ -68,7 +92,7 @@ export default function Homepage() {
         </div> */}
       </div>
 
-      <div style={{backgroundColor:'rgb(220,220,220)'}}>
+      <div style={{ backgroundColor: "rgb(220,220,220)" }}>
         <div className="container py-5 d-flex justify-content-center align-items-center flex-column">
           <h4 className="col-lg-10 col-12 black text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

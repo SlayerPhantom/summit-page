@@ -13,6 +13,11 @@ import {
 } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
+const displayUser = () => {
+  const user = localStorage.getItem("user");
+  if (user) return user.name;
+  else return null;
+};
 export default function CustomNavbar() {
   const theme = createMuiTheme({
     overrides: {
