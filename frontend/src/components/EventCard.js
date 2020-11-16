@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Modal, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 
-export default function EventCard({ title, text, host, when }) {
+export default function EventCard({ photo, title, text, host, when }) {
   const [showModal, setShowModal] = useState(false);
 
   const handleShow = () => setShowModal(true);
@@ -21,7 +21,7 @@ export default function EventCard({ title, text, host, when }) {
       </Card> */}
 
       <Card className="ml-5" style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+        <Card.Img variant="top" src={photo} />
         <Card.Body>
           <div className="d-flex justify-content-center">
             <Card.Title>{title}</Card.Title>
