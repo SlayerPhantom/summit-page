@@ -64,8 +64,30 @@ export default function CustomNavbar() {
           >
             Speakers
           </Link>
+          <Link variant="h6" underline="none" style={linkStyle} href="/video">
+            Video
+          </Link>
+          <Link variant="h6" underline="none" style={linkStyle} href="/venue">
+            Venue
+          </Link>
+          <Link
+            variant="h6"
+            underline="none"
+            style={linkStyle}
+            href="/sponsors"
+          >
+            Sponsors
+          </Link>
+          <Link
+            variant="h6"
+            underline="none"
+            style={linkStyle}
+            href="/registerEvents"
+          >
+            Signup
+          </Link>
 
-          <Button
+          {/* <Button
             aria-controls="simple-menu"
             color="inherit"
             aria-haspopup="true"
@@ -87,7 +109,7 @@ export default function CustomNavbar() {
 
           <Button color="inherit" style={linkStyle}>
             Login
-          </Button>
+          </Button> */}
         </Toolbar>
       </AppBar>
     </ThemeProvider>

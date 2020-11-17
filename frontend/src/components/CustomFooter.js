@@ -1,13 +1,6 @@
 import React from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "../style.css";
 import "../css/CustomFooter.css";
-import {
-  FaTwitterSquare,
-  FaYoutubeSquare,
-  FaFacebookSquare,
-  FaInstagramSquare,
-} from "react-icons/fa";
 import {
   BottomNavigation,
   BottomNavigationAction,
