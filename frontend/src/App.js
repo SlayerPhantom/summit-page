@@ -6,7 +6,6 @@ import Events from "./pages/Events";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import CustomNavbar from "./components/CustomNavbar";
 import CustomFooter from "./components/CustomFooter";
-import Video from "./pages/Video";
 import Venue from "./pages/Venue";
 import Signup from "./pages/Signup";
 import PageNotFound from "./pages/PageNotFound";
@@ -23,7 +22,6 @@ export default function App() {
         {/* Swap back to protectedroutes when done */}
         <Route path="/speakers" exact component={Speakers} />
         <Route path="/events" exact component={Events} />
-        <Route path="/video" exact component={Video} />
         <Route path="/venue" exact component={Venue} />
         <Route path="/registerEvents" exact component={Signup} />
         <Route path="/sponsors" exact component={Sponsors} />

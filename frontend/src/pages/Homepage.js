@@ -1,12 +1,11 @@
 import React from "react";
-import CustomNavbar from "../components/CustomNavbar";
-import CustomFooter from "../components/CustomFooter";
 import GoogleAuth from "../components/GoogleAuth";
 import { GoogleLogout } from "react-google-login";
 import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import computerData from "../images/sitting_at_computer.json";
 import Background from "../images/bg.png";
+import ReactPlayer from "react-player";
 
 // import sunriseData from "../images/sunsummit.json";
 import "../style.css";
@@ -83,12 +82,6 @@ export default function Homepage() {
             </div>
           </Container>
         </Container>
-
-        {/* <div className="row pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-          <img className="col-xs about-img" src={forestscape} />
-          <img className="col-xs about-img" src="{% static 'images/about.png' %}" />
-          <img className="col-xs about-img" src="{% static 'images/about.png' %}" />
-        </div> */}
       </div>
 
       <div style={{ backgroundColor: "rgb(220,220,220)" }}>
@@ -108,22 +101,18 @@ export default function Homepage() {
             odio morbi quis commodo odio aenean sed adipiscing.
             <br />
             <br />
-            Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-            Donec pretium vulputate sapien nec sagittis aliquam malesuada
-            bibendum arcu. Aenean et tortor at risus viverra adipiscing at.
-            Ornare arcu dui vivamus arcu felis bibendum ut tristique. Lectus
-            magna fringilla urna porttitor rhoncus dolor. Erat imperdiet sed
-            euismod nisi porta lorem mollis aliquam. Cras adipiscing enim eu
-            turpis egestas pretium. Scelerisque viverra mauris in aliquam. Id eu
-            nisl nunc mi ipsum faucibus vitae aliquet nec. Purus gravida quis
-            blandit turpis cursus. Risus feugiat in ante metus dictum at.
-            Maecenas pharetra convallis posuere morbi. Quis eleifend quam
-            adipiscing vitae proin. Turpis egestas maecenas pharetra convallis
-            posuere morbi leo urna molestie. Volutpat maecenas volutpat blandit
-            aliquam etiam erat. Arcu cursus vitae congue mauris rhoncus aenean.
-            Etiam erat velit scelerisque in dictum non. Scelerisque felis
-            imperdiet proin fermentum leo vel orci porta non.
           </h4>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20px",
+              marginBottom: "20px",
+            }}
+          >
+            <ReactPlayer url="https://www.youtube.com/watch?v=ug50zmP9I7s" />
+          </div>
         </div>
       </div>
     </div>

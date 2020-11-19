@@ -1,16 +1,7 @@
 import React from "react";
 import "../style.css";
 import "../css/CustomNavbar.css";
-import {
-  AppBar,
-  Toolbar,
-  Menu,
-  MenuItem,
-  IconButton,
-  Typography,
-  Link,
-  Button,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Link } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const displayUser = () => {
@@ -63,9 +54,6 @@ export default function CustomNavbar() {
             href="/Speakers"
           >
             Speakers
-          </Link>
-          <Link variant="h6" underline="none" style={linkStyle} href="/video">
-            Video
           </Link>
           <Link variant="h6" underline="none" style={linkStyle} href="/venue">
             Venue

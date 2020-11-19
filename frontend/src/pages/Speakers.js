@@ -1,9 +1,6 @@
 import React from "react";
-import CustomNavbar from "../components/CustomNavbar";
-import CustomFooter from "../components/CustomFooter";
 import { Container, Carousel } from "react-bootstrap";
 import "../style.css";
-import SpeakerCard from "../components/SpeakerCard";
 import Lottie from "react-lottie";
 import consultData from "../images/consolutation.json";
 import Background from "../images/bg.png";
@@ -89,50 +86,6 @@ export default function Speakers() {
           </Carousel>
         </Container>
       </Container>
-
-      {/* <div
-        style={{ backgroundColor: "rgb(220,220,220)", paddingBottom: "40px" }}
-      >
-        <Container>
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={justinWetherill}
-                alt="Justin Wetherill"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={davidReiff}
-                alt="David Reiff"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={eddieTrujillo}
-                alt="Eddie Trujillo"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={toddEvans} alt="Todd Evans" />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={mitchPaull}
-                alt="Mitch Paull"
-              />
-            </Carousel.Item>
-          </Carousel>
-        </Container>
-        <div className="ro
-        w pt-5 d-flex justify-content-center align-items-center pl-0 pr-0 mt-0 mr-0 ml-0">
-        </div> 
-      </div>
-      */}
     </div>
   );
 }

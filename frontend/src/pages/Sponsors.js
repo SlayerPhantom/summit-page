@@ -1,10 +1,9 @@
 import React from "react";
-import CustomNavbar from "../components/CustomNavbar";
-import CustomFooter from "../components/CustomFooter";
-import { Container, Carousel } from "react-bootstrap";
+import { Container, Card, Image, Col, Row } from "react-bootstrap";
 import "../style.css";
-import EventCard from "../components/EventCard";
 import Background from "../images/bg.png";
+
+import EventCard from "../components/EventCard";
 
 import googleLogo from "../images/sponsors/googleLogo.png"; // title sponsors
 import samsungLogo from "../images/sponsors/samsungLogo.png"; // diamond sponsor
@@ -17,7 +16,7 @@ export default function Events() {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "rgb(220,220,220)", paddingBottom: "40px" }}>
       <div style={style}>
         <Container>
           <Container
@@ -36,39 +35,31 @@ export default function Events() {
         </Container>
       </div>
 
-      <div
-        style={{ backgroundColor: "rgb(220,220,220)", paddingBottom: "40px" }}
-      >
-        <Carousel>
-          <Carousel.Item>
-            <div className="d-flex justify-content-center">
-              <img
-                className="d-block w-50"
-                src={samsungLogo}
-                alt="Title Sponsor: Samsung"
-              />
-            </div>
+      <Container className="justify-content-center">
+        <h3 className="text-center mb-4">Diamond Sponsors</h3>
 
-            <Carousel.Caption>
-              <h3>Title Sponsor</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
+        <Row className="justify-content-center mb-5">
+          <Col xs={5} className="d-flex justify-content-center">
+            <Image style={{ width: "300px" }} src={samsungLogo} rounded />
+          </Col>
+        </Row>
 
-          <Carousel.Item>
-            <div className="d-flex justify-content-center">
-              <img
-                className="d-block w-50"
-                src={googleLogo}
-                alt="DiamondSponsor: Google"
-              />
-            </div>
+        <h3 className="text-center mb-4">Gold Sponsors</h3>
 
-            <Carousel.Caption>
-              <h3>Diamond Sponsor</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </div>
+        <Row className="justify-content-center mb-5">
+          <Col xs={5} className="d-flex justify-content-center">
+            <Image style={{ width: "300px" }} src={googleLogo} rounded />
+          </Col>
+        </Row>
+
+        <h3 className="text-center mb-4">Valley Sponsors</h3>
+
+        <Row className="justify-content-center mb-5">
+          <Col xs={5} className="d-flex justify-content-center">
+            <Image style={{ width: "300px" }} src={voicecommLogo} rounded />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
