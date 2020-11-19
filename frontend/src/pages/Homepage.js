@@ -54,18 +54,16 @@ export default function Homepage() {
                   className="text-center black"
                   style={{ fontFamily: "circular" }}
                 >
-                  Annual Summit
+                  uBreakiFix Annual Summit
                 </h1>
                 <h5
                   className="text-center black"
                   style={{ fontFamily: "circular" }}
                 >
-                  Another night, another dream but always you It's like a vision
-                  of love that seems to be true Another night another dream but
-                  always you In the night I dream of love so true Just another
-                  night, another vision of love You feel joy, you feel pain,
-                  'cuz nothing will be the same Just another night is all that
-                  it takes To understand the difference between lovers and fakes
+                  Join uBreakiFix for the 2020-2021 annual summit. This is a
+                  weekend-long event where employees will be able to network
+                  with each, attend workshops, and attend keynote speeches led
+                  by our upper management.
                 </h5>
                 <div className="mt-3 d-flex justify-content-center">
                   {isAuthenticated ? (
@@ -86,7 +84,7 @@ export default function Homepage() {
 
       <div style={{ backgroundColor: "rgb(220,220,220)" }}>
         <div className="container py-5 d-flex justify-content-center align-items-center flex-column">
-          <h4 className="col-lg-10 col-12 black text-center">
+          {/* <h4 className="col-lg-10 col-12 black text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
             vulputate dignissim suspendisse in est ante in. Nec sagittis aliquam
@@ -101,7 +99,7 @@ export default function Homepage() {
             odio morbi quis commodo odio aenean sed adipiscing.
             <br />
             <br />
-          </h4>
+          </h4> */}
 
           <div
             style={{
@@ -111,7 +109,7 @@ export default function Homepage() {
               marginBottom: "20px",
             }}
           >
-            <ReactPlayer url="https://www.youtube.com/watch?v=ug50zmP9I7s" />
+            <ReactPlayer url="https://youtu.be/SB0J5GQZWE4" />
           </div>
         </div>
       </div>
