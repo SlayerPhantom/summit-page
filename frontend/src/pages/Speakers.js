@@ -52,7 +52,7 @@ export default function Speakers() {
         </Container>
       </div>
 
-      <Container className="py-5 d-flex justify-content-center align-items-center flex-column">
+      <Container className="py-5 d-flex justify-content-center align-items-center flex-column mmt-3">
         <Container>
           <Carousel>
             <Carousel.Item>
