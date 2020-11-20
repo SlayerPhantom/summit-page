@@ -31,7 +31,7 @@ export default function App() {
 				<ProtectedRoute path="/venue" exact component={Venue} />
 				<ProtectedRoute path="/registerevents" exact component={Signup} />
 				<ProtectedRoute path="/sponsors" exact component={Sponsors} />
-				<ProtectedRoute path="/" component={PageNotFound} />
+				<Route path="/" component={PageNotFound} />
 			</Switch>
 			<CustomFooter />
 		</Router>
