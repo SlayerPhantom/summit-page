@@ -52,17 +52,9 @@ export default function Homepage() {
               <div className="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
                 <Lottie options={computerLottieData} height={400} width={400} />
               </div>
-              <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
-                <h1
-                  className="text-center black"
-                  style={{ fontFamily: "circular" }}
-                >
-                  uBreakiFix Annual Summit
-                </h1>
-                <h5
-                  className="text-center black"
-                  style={{ fontFamily: "circular" }}
-                >
+              <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center textBlock">
+                <h1>uBreakiFix Annual Summit</h1>
+                <h5>
                   Join uBreakiFix for the 2020-2021 annual summit. This is a
                   weekend-long event where employees will be able to network
                   with each, attend workshops, and attend keynote speeches led
@@ -86,8 +78,9 @@ export default function Homepage() {
       </div>
 
       <div style={{ backgroundColor: "rgb(220,220,220)" }}>
-        <div className="container py-5 d-flex justify-content-center align-items-center flex-column">
-          <div
+        <Container className="py-5 d-flex justify-content-center align-items-center flex-column">
+          <Container
+            className="videoPlayer"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -96,17 +89,8 @@ export default function Homepage() {
             }}
           >
             <ReactPlayer url="https://youtu.be/SB0J5GQZWE4" />
-          </div>
-
-          {/* <div>
-            <p>
-              Note: uBreakiFix will continue to maintain and follow any
-              necessary COVID-19 warnings and guildelines for events, including
-              the annual summit. We value our employees' health above all and
-              will make changes/accomodations as needed.
-            </p>
-          </div> */}
-        </div>
+          </Container>
+        </Container>
       </div>
     </div>
   );

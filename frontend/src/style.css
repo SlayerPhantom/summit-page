@@ -2,26 +2,8 @@ body {
   font-family: "Signika", sans-serif;
 }
 
-i {
-  font-size: 2em !important;
-  margin: 0 0.5em;
-}
-
 .main-content {
   flex-direction: column;
-}
-
-.holder {
-  position: relative;
-  width: 200px;
-  height: 50px;
-  left: 140;
-  top: -20;
-}
-
-.clip {
-  /* Clip edges, as some of the lines don't terminate nicely. */
-  overflow: hidden;
 }
 
 em {
@@ -30,10 +12,32 @@ em {
   font-style: normal;
 }
 
-/* .backgroundWrapper {
-  background-image: url("images/default-image.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.image {
+  margin-left: 5rem;
+  width: 25rem;
+  height: 20rem;
+}
+
+.textBlock h1,
+h2,
+h5 {
+  text-align: center;
+  color: black;
+  font-family: Circular;
+}
+
+.image {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .textBlock {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .image {
+    margin-left: 0;
+  }
+}

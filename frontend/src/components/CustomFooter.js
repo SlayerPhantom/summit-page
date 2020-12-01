@@ -1,6 +1,5 @@
 import React from "react";
 import "../style.css";
-import "../css/CustomFooter.css";
 import {
   BottomNavigation,
   BottomNavigationAction,
