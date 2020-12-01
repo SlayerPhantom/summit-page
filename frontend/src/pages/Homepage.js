@@ -84,22 +84,6 @@ export default function Homepage() {
 
       <div style={{ backgroundColor: "rgb(220,220,220)" }}>
         <div className="container py-5 d-flex justify-content-center align-items-center flex-column">
-          {/* <h4 className="col-lg-10 col-12 black text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
-            vulputate dignissim suspendisse in est ante in. Nec sagittis aliquam
-            malesuada bibendum arcu vitae elementum curabitur. Consectetur purus
-            ut faucibus pulvinar elementum integer enim neque. Nunc sed id
-            semper risus in hendrerit gravida rutrum. Ac odio tempor orci
-            dapibus ultrices in iaculis nunc. Quis commodo odio aenean sed
-            adipiscing diam donec. Sapien eget mi proin sed. Arcu vitae
-            elementum curabitur vitae nunc sed. Orci sagittis eu volutpat odio
-            facilisis mauris sit amet massa. Eget duis at tellus at urna. Mus
-            mauris vitae ultricies leo integer malesuada nunc vel risus. Sed
-            odio morbi quis commodo odio aenean sed adipiscing.
-            <br />
-            <br />
-          </h4> */}
           <div
             style={{
               display: "flex",
@@ -110,6 +94,15 @@ export default function Homepage() {
           >
             <ReactPlayer url="https://youtu.be/SB0J5GQZWE4" />
           </div>
+
+          {/* <div>
+            <p>
+              Note: uBreakiFix will continue to maintain and follow any
+              necessary COVID-19 warnings and guildelines for events, including
+              the annual summit. We value our employees' health above all and
+              will make changes/accomodations as needed.
+            </p>
+          </div> */}
         </div>
       </div>
     </div>
