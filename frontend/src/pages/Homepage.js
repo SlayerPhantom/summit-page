@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogleAuth from "../components/GoogleAuth";
 import { GoogleLogout } from "react-google-login";
 import { Container } from "react-bootstrap";
@@ -11,7 +11,10 @@ import ReactPlayer from "react-player";
 import "../style.css";
 
 export default function Homepage() {
-  let isAuthenticated = localStorage.getItem("isAuthenticated") || false;
+  // let isAuthenticated = localStorage.getItem('isAuthenticated')
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("isAuthenticated")
+  );
 
   const computerLottieData = {
     loop: true,
@@ -36,7 +39,7 @@ export default function Homepage() {
     localStorage.removeItem("name");
     localStorage.removeItem("token");
     localStorage.removeItem("isRegistered");
-    isAuthenticated = false;
+    setIsAuthenticated(false);
     window.location.replace("/");
   };
 
