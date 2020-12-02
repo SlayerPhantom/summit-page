@@ -1,30 +1,20 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "../style.css";
+import "../css/style.css";
+import "../css/DaySchedule.css";
 import EventCard from "../components/EventCard";
 
-import pacificaBallroom from "../images/pacificaBallroom.jpg";
-import oceanaBallroom from "../images/oceanaBallroom.jpg";
-import registrationLobby from "../images/registrationLobby.jpg";
-import lobby from "../images/lobby.jpg";
-import loews1 from "../images/loews1.jpg";
-import loews2 from "../images/loews2.jpg";
-import loews3 from "../images/loews3.jpg";
-import shuttle from "../images/shuttle.jpeg";
-import citywalk from "../images/citywalk.jpg";
+import pacificaBallroom from "../images/locations/pacificaBallroom.jpg";
+import oceanaBallroom from "../images/locations/oceanaBallroom.jpg";
+import loews1 from "../images/locations/loews1.jpg";
+import loews2 from "../images/locations/loews2.jpg";
+import loews3 from "../images/locations/loews3.jpg";
+import shuttle from "../images/locations/shuttle.jpeg";
 
 export default function DayThreeSchedule() {
   return (
     <div>
-      <div
-        style={{
-          backgroundColor: "rgb(220,220,220)",
-          paddingBottom: "40px",
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="scheduleWrapper">
         <Container>
           <Row className="justify-content-center">
             <Col>

@@ -1,10 +1,12 @@
 import React from "react";
-import "../style.css";
+
+import "../css/style.css";
 import {
   BottomNavigation,
   BottomNavigationAction,
   Typography,
 } from "@material-ui/core";
+
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import FacebookIcon from "@material-ui/icons/Facebook";

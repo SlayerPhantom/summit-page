@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+
 import GoogleAuth from "../components/GoogleAuth";
 import { GoogleLogout } from "react-google-login";
-import { Container } from "react-bootstrap";
-import Lottie from "react-lottie";
-import computerData from "../images/sitting_at_computer.json";
-import Background from "../images/bg.png";
 import ReactPlayer from "react-player";
+import Lottie from "react-lottie";
 
-// import sunriseData from "../images/sunsummit.json";
-import "../style.css";
+import { Container } from "react-bootstrap";
+import "../css/style.css";
+import "../css/Homepage.css";
+
+import computerData from "../images/lotties/sitting_at_computer.json";
 
 export default function Homepage() {
   // let isAuthenticated = localStorage.getItem('isAuthenticated')
@@ -23,10 +24,6 @@ export default function Homepage() {
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-  };
-  const style = {
-    backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
   };
 
   const logout = () => {
@@ -45,7 +42,7 @@ export default function Homepage() {
 
   return (
     <div>
-      <div style={style}>
+      <div className="background">
         <Container>
           <Container className="row top-section">
             <div className="row vh-75 mb-5 top-section-2">
@@ -79,15 +76,7 @@ export default function Homepage() {
 
       <div style={{ backgroundColor: "rgb(220,220,220)" }}>
         <Container className="py-5 d-flex justify-content-center align-items-center flex-column">
-          <Container
-            className="videoPlayer"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "20px",
-              marginBottom: "20px",
-            }}
-          >
+          <Container className="videoPlayer">
             <ReactPlayer url="https://youtu.be/SB0J5GQZWE4" />
           </Container>
         </Container>

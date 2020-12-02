@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Carousel } from "react-bootstrap";
-import "../style.css";
 import Lottie from "react-lottie";
-import consultData from "../images/consolutation.json";
-import Background from "../images/bg.png";
+import consultData from "../images/lotties/consolutation.json";
+
+import { Container, Carousel } from "react-bootstrap";
+import "../css/style.css";
 
 import davidReiff from "../images/speakers/davidReiff.jpg";
 import eddieTrujillo from "../images/speakers/eddieTrujillo.jpg";
@@ -21,14 +21,9 @@ export default function Speakers() {
     },
   };
 
-  const style = {
-    backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
-  };
-
   return (
     <div>
-      <div style={style}>
+      <div className="background">
         <Container>
           <Container className="row top-section">
             <div className="row vh-75 mb-5 top-section-2">

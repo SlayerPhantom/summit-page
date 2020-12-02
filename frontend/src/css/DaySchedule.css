@@ -1,0 +1,7 @@
+.scheduleWrapper {
+  background-color: rgb(220, 220, 220);
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
