@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Card, Modal, Button, ListGroup, ListGroupItem } from "react-bootstrap";
-import "../style.css";
+
+import { Card, Modal, Button } from "react-bootstrap";
+import "../css/style.css";
 
 export default function SpeakerCard({ photo, name, text }) {
   const [showModal, setShowModal] = useState(false);

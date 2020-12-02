@@ -1,43 +1,21 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";
-import "../style.css";
-import Background from "../images/bg.png";
 
-import venueImg from "../images/venue.jpg";
+import { Container, Button } from "react-bootstrap";
+import "../css/style.css";
+import venueImg from "../images/locations/venue.jpg";
 
 export default function Speakers() {
-  const style = {
-    backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
-  };
-
   return (
     <div>
-      <div style={style}>
+      <div className="background">
         <Container>
           <Container className="row top-section">
             <div className="row vh-75 mb-5 top-section-2">
               <div className="order-md-1 order-2 col-md-6 d-flex justify-content-center align-items-center">
-                <img
-                  src={venueImg}
-                  className="image"
-                  alt="venue image"
-                  // style={{ width: "360px", height: "320px" }}
-                />
+                <img src={venueImg} className="image" alt="venue" />
               </div>
               <div className="main-content col-md-6 order-1 d-flex justify-content-center textBlock">
-                <h2
-                  style={{
-                    marginTop: "5rem",
-                    textAlign: "center",
-                    color: "white",
-                    fontSize: "5rem",
-                    fontWeight: "bold",
-                    fontFamily: "signika",
-                  }}
-                >
-                  Venue
-                </h2>
+                <h2>Venue</h2>
               </div>
             </div>
           </Container>

@@ -6,6 +6,11 @@ body {
   flex-direction: column;
 }
 
+.background {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+}
+
 em {
   color: #3d52d5;
   font-size: 52;
@@ -19,11 +24,18 @@ em {
 }
 
 .textBlock h1,
-h2,
 h5 {
   text-align: center;
   color: black;
-  font-family: Circular;
+  font-family: Circular !important;
+}
+
+.textBlock h2 {
+  margin-left: 5rem;
+  margin-top: 5rem;
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 .image {
@@ -33,6 +45,7 @@ h5 {
 @media screen and (max-width: 600px) {
   .textBlock {
     margin-top: 2rem;
+    margin-left: 0;
   }
 }
 
