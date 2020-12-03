@@ -28,14 +28,12 @@ export default function App() {
 	
 	*/}
 				 
-	  {/*
         <ProtectedRoute path="/speakers" exact component={Speakers} />
         <ProtectedRoute path="/events" exact component={Events} />
         <ProtectedRoute path="/venue" exact component={Venue} />
         <ProtectedRoute path="/registerevents" exact component={Signup} />
         <ProtectedRoute path="/sponsors" exact component={Sponsors} />
-	  */}
-	  <Route path="/" component={PageNotFound} />
+	<Route path="/" component={PageNotFound} />
       </Switch>
       <CustomFooter />
     </Router>
