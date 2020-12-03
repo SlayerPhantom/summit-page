@@ -27,7 +27,7 @@ export default function Signup(props) {
   useEffect(() => {
     const onload = async () => {
       try {
-        setIsRegistered(localStorage.getItem("isRegistered") === "false");
+        setIsRegistered(localStorage.getItem("isRegistered") === "true");
 
         setfname(localStorage.getItem("givenName"));
         setlname(localStorage.getItem("familyName"));
