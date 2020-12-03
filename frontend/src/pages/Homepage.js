@@ -4,15 +4,12 @@ import { GoogleLogout } from "react-google-login";
 import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import computerData from "../images/lotties/sitting_at_computer.json";
-import Background from "../images/bg.png";
 import ReactPlayer from "react-player";
 
-// import sunriseData from "../images/sunsummit.json";
 import "../css/style.css";
 import "../css/Homepage.css";
 
 export default function Homepage() {
-  // let isAuthenticated = localStorage.getItem('isAuthenticated')
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem("isAuthenticated")
   );
@@ -49,7 +46,7 @@ export default function Homepage() {
               <div className="order-md-1 order-2 col-md-6 col-12 d-flex justify-content-center align-items-center">
                 <Lottie options={computerLottieData} height={400} width={400} />
               </div>
-              <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center textBlock">
+              <div className="main-content col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center textBlock headerText">
                 <h1>uBreakiFix Annual Summit</h1>
                 <h5>
                   Join uBreakiFix for the 2020-2021 annual summit. This is a
