@@ -25,14 +25,14 @@ export default function CustomNavbar() {
       {isAuthenticated && (
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
+            <Nav.Link href="/venue" className="navbarItem">
+              Venue
+            </Nav.Link>
             <Nav.Link href="/events" className="navbarItem">
               Events
             </Nav.Link>
             <Nav.Link href="/speakers" className="navbarItem">
               Speakers
-            </Nav.Link>
-            <Nav.Link href="/venue" className="navbarItem">
-              Venue
             </Nav.Link>
             <Nav.Link href="/sponsors" className="navbarItem">
               Sponsors
