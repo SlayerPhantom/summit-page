@@ -1,24 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
 import axios from "axios";
 import "../css/style.css";
 import "../css/Signup.css";
 import Register from "../components/Register";
-import RegisterEdit from "../components/RegisterEdit";
-import {
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Alert, Container, Button } from "react-bootstrap";
 import buildURL from "../utils/buildURL";
 
 export default function Signup(props) {
   const [isRegistered, setIsRegistered] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [email, setemail] = useState("");
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
@@ -68,27 +59,22 @@ export default function Signup(props) {
         googleId,
       };
 
-      console.log(token);
-      console.log(payload);
-
       const url = buildURL("rsvp");
       const res = await axios.post(url, payload, { headers });
 
       if (res.data.errors) {
-        window.alert(
-        "Could not register your account. Please check your information and try again."
-      );
         console.log(res.data.errors);
       } else {
         setIsRegistered(true);
         localStorage.setItem("isRegistered", "true");
       }
-      window.alert("Success, you have registered for the event.");
-      window.location.refresh("/");
+      setIsRegistered(true);
+
+      setShowError(false);
+      setShowSuccess(true);
     } catch (error) {
-      window.alert(
-        "Could not register your account. Please check your information and try again."
-      );
+      setShowError(true);
+      setShowSuccess(false);
       console.log(error);
     }
   }
@@ -113,8 +99,13 @@ export default function Signup(props) {
       }
 
       setisediting(!isediting);
+
+      setShowError(false);
+      setShowSuccess(true);
     } catch (error) {
       console.log(error);
+      setShowError(true);
+      setShowSuccess(false);
     }
   }
 
@@ -135,6 +126,7 @@ export default function Signup(props) {
       <div className="greyBackground">
         {!isRegistered && (
           <Register
+            headerText={"Register Now!"}
             fname={fname}
             lname={lname}
             email={email}
@@ -142,11 +134,15 @@ export default function Signup(props) {
             lnameOnclick={(e) => setlname(e.target.value)}
             emailOnclick={(e) => setemail(e.target.value)}
             register={() => register()}
+            registerText="Register"
+            showError={showError}
+            showSuccess={showSuccess}
           />
         )}
 
         {isRegistered && (
-          <RegisterEdit
+          <Register
+            headerText={"Congrats. You are Registered!"}
             fname={fname}
             lname={lname}
             email={email}
@@ -154,6 +150,9 @@ export default function Signup(props) {
             lnameOnclick={(e) => setlname(e.target.value)}
             emailOnclick={(e) => setemail(e.target.value)}
             register={() => editrsvp()}
+            registerText={"Edit"}
+            showError={showError}
+            showSuccess={showSuccess}
           />
         )}
       </div>
