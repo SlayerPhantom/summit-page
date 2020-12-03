@@ -2,7 +2,7 @@ import React from "react";
 import GoogleLogin from "react-google-login";
 
 import axios from "axios";
-
+import buildURL from "../utils/buildURL";
 export default function GoogleAuth({
   showLogin,
   loginText,
