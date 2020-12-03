@@ -1,12 +1,9 @@
 const express = require('express');
-const passport = require('passport');
 const cors = require('cors');
 
 require('dotenv').config({ path: './config/config.env' });
-// require('./config/passport')(passport);
 
 const app = express();
-// app.use(passport.initialize());
 const { connectDB } = require('./config/db');
 
 app.use(express.json());
@@ -25,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', require('./routes/users')); // user route
-app.use('/auth', require('./routes/auth')); // google Oauth route
+// app.use('/auth', require('./routes/auth')); // google Oauth route
 app.use('/rsvp', require('./routes/rsvp')); // RSVP route
 
 const port = process.env.PORT || 5000;
