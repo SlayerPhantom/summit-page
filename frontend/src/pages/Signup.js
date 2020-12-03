@@ -14,6 +14,7 @@ import {
 	Row,
 	Col,
 } from 'react-bootstrap';
+import buildURL from '../utils/buildURL';
 
 export default function Signup(props) {
 	const [isRegistered, setIsRegistered] = useState(false);
@@ -34,11 +35,13 @@ export default function Signup(props) {
 					const token = localStorage.getItem('token');
 					const payload = { googleId: localStorage.getItem('googleId') };
 					const headers = { Authorization: `Bearer ${token}` };
-					const res = await axios.post(
-						'http://localhost:5000/rsvp/getrsvp',
-						payload,
-						{ headers }
-					);
+					const url = buildURL('rsvp/getrsvp');
+					const res = await axios.post(url, payload, { headers });
+					// const res = await axios.post(
+					// 	'http://localhost:5000/rsvp/getrsvp',
+					// 	payload,
+					// 	{ headers }
+					// );
 					if (res.data.errors) {
 						console.log(res.data.errors);
 						return;
@@ -67,9 +70,11 @@ export default function Signup(props) {
 			};
 			console.log(token);
 			console.log(payload);
-			const res = await axios.post('http://localhost:5000/rsvp', payload, {
-				headers,
-			});
+			// const res = await axios.post('http://localhost:5000/rsvp', payload, {
+			// 	headers,
+			// });
+			const url = buildURL('rsvp');
+			const res = await axios.post(url, payload, { headers });
 			if (res.data.errors) {
 				console.log(res.data.errors);
 			} else {
@@ -92,7 +97,8 @@ export default function Signup(props) {
 			console.log(payload);
 			const token = localStorage.getItem('token');
 			const headers = { Authorization: `Bearer ${token}` };
-			const url = `http://localhost:5000/rsvp/edit`;
+			// const url = `http://localhost:5000/rsvp/edit`;
+			const url = buildURL('rsvp/edit');
 			const res = await axios.post(url, payload, { headers });
 			if (res.data.errors) {
 				console.log(res.data.errors);
