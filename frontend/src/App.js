@@ -15,6 +15,7 @@ import './css/style.css';
 export default function App() {
 	return (
 		<Router>
+			<CustomNavbar />
 			<Switch>
 				<Route path="/" exact component={Homepage} />
 
