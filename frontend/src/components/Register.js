@@ -1,8 +1,9 @@
 import React from "react";
-import { Container, Button, Form } from "react-bootstrap";
+import { Container, Button, Form, Alert } from "react-bootstrap";
 import "../css/Register.css";
 
 export default function Register({
+  headerText,
   fname,
   lname,
   email,
@@ -10,10 +11,35 @@ export default function Register({
   lnameOnclick,
   emailOnclick,
   register,
+  registerText,
+  showError,
+  showSuccess,
 }) {
   return (
     <Container>
-      <h1 className="mb-3 text-center">Register Now!</h1>
+      {showError && (
+        <Alert variant="danger">
+          <Alert.Heading>Oh No! Error While Registering</Alert.Heading>
+          <p>
+            There was an error when registering {fname} {lname}, with email
+            address: {email}. Please check your information below and try again.
+            Please make sure that if you are registering with an email, to use
+            your uBreakiFix account.
+          </p>
+        </Alert>
+      )}
+
+      {showSuccess && (
+        <Alert variant="Success">
+          <Alert.Heading>Congratulations! You Have Registered!</Alert.Heading>
+          <p>
+            Feel free to check and edit your information below. We look forward
+            to seeing you at the event!
+          </p>
+        </Alert>
+      )}
+
+      <h1 className="mb-3 text-center">{headerText}</h1>
       <Form>
         <Form.Group controlId="formFirstName" className="formLabel">
           <Form.Label>First Name</Form.Label>
@@ -52,8 +78,8 @@ export default function Register({
         </Form.Group>
 
         <div className="d-flex justify-content-center">
-          <Button variant="danger" type="submit" onClick={register}>
-            Register
+          <Button variant="danger" onClick={register}>
+            {registerText}
           </Button>
         </div>
       </Form>
