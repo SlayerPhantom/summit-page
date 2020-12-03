@@ -19,7 +19,7 @@ router.post('/', isAuthenticated, async (req, res) => {
 		// 	return res.status(400).json('All fields are required');
 
 		const { valid, errors } = validateEmail(email);
-		if (!valid) return res.status(400).json({ errors });
+		if (!valid) return res.json({ errors });
 
 		const user = await User.findOne({ googleId });
 		user.isRegistered = true;
@@ -27,7 +27,7 @@ router.post('/', isAuthenticated, async (req, res) => {
 		if (user) {
 			const rsvp = await RSVP.findOne({ googleId });
 			if (rsvp)
-				return res.status(400).json({ error: 'you are already registered' });
+				return res.json({ error: 'you are already registered' });
 			else {
 				const newRSVP = { email, firstName, lastName, googleId };
 				const result = await RSVP.create(newRSVP);
@@ -36,10 +36,10 @@ router.post('/', isAuthenticated, async (req, res) => {
 				});
 			}
 		} else {
-			res.json({ error: 'No user with this googleId exists' });
+			return res.json({ error: 'No user with this googleId exists' });
 		}
 	} catch (err) {
-		res.json({ error: err });
+		return res.json({ error: err });
 	}
 });
 
@@ -49,14 +49,14 @@ router.delete('/', isAuthenticated, async (req, res) => {
 		const { googleId } = req.body;
 		const rsvp = await RSVP.findOneAndDelete({ googleId });
 		if (rsvp) {
-			res.status.json({ message: 'successfully deleted rsvp' });
+			return res.status.json({ message: 'successfully deleted rsvp' });
 		} else {
-			res.status.json({
+			return res.status.json({
 				error: 'this account is not registered for the event',
 			});
 		}
 	} catch (err) {
-		res.status.json({ error: 'something went wrong' });
+		return res.status.json({ error: 'something went wrong' });
 	}
 });
 
@@ -87,13 +87,13 @@ router.post('/edit', isAuthenticated, async (req, res) => {
 				});
 				await rsvp.save();
 			} else {
-				res.json({ error: 'this account is not registered for the event' });
+				return res.json({ error: 'this account is not registered for the event' });
 			}
 		} else {
 			throw new Error('No user with this ID exists');
 		}
 	} catch (err) {
-		res.json({ error: 'something went wrong' });
+		return res.json({ error: 'something went wrong' });
 	}
 });
 
