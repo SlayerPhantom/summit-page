@@ -68,8 +68,6 @@ export default function Signup(props) {
 				email,
 				googleId,
 			};
-			console.log(token);
-			console.log(payload);
 			// const res = await axios.post('http://localhost:5000/rsvp', payload, {
 			// 	headers,
 			// });
@@ -77,6 +75,7 @@ export default function Signup(props) {
 			const res = await axios.post(url, payload, { headers });
 			if (res.data.errors) {
 				console.log(res.data.errors);
+				return;
 			} else {
 				setIsRegistered(true);
 				localStorage.setItem('isRegistered', 'true');
@@ -97,11 +96,11 @@ export default function Signup(props) {
 			console.log(payload);
 			const token = localStorage.getItem('token');
 			const headers = { Authorization: `Bearer ${token}` };
-			// const url = `http://localhost:5000/rsvp/edit`;
 			const url = buildURL('rsvp/edit');
 			const res = await axios.post(url, payload, { headers });
 			if (res.data.errors) {
 				console.log(res.data.errors);
+				return;
 			}
 			setisediting(!isediting);
 		} catch (error) {
