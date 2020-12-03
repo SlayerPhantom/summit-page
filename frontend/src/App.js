@@ -19,19 +19,20 @@ export default function App() {
       <Switch>
         <Route path="/" exact component={Homepage} />
 
-        {/* Swap back to protectedroutes when done testing*/}
-        {/* <Route path="/speakers" exact component={Speakers} />
+ 
+        <Route path="/speakers" exact component={Speakers} />
         <Route path="/events" exact component={Events} />
         <Route path="/venue" exact component={Venue} />
-        <Route path="/registerEvents" exact component={Signup} />
+        <Route path="/registerevents" exact component={Signup} />
         <Route path="/sponsors" exact component={Sponsors} />
-				 */}
-
+				 
+	  {/*
         <ProtectedRoute path="/speakers" exact component={Speakers} />
         <ProtectedRoute path="/events" exact component={Events} />
         <ProtectedRoute path="/venue" exact component={Venue} />
         <ProtectedRoute path="/registerevents" exact component={Signup} />
         <ProtectedRoute path="/sponsors" exact component={Sponsors} />
+	  */}
 	  <Route path="/" component={PageNotFound} />
       </Switch>
       <CustomFooter />
