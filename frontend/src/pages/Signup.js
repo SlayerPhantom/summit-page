@@ -64,6 +64,9 @@ export default function Signup(props) {
 
       if (res.data.errors) {
         console.log(res.data.errors);
+        setShowError(true);
+        setShowSuccess(false);
+        return;
       } else {
         setIsRegistered(true);
         localStorage.setItem("isRegistered", "true");
