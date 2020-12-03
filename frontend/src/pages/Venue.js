@@ -23,9 +23,10 @@ export default function Speakers() {
       </div>
 
       <Container className="mt-3 mb-3 d-flex justify-content-center align-items-center flex-column textBlock">
-        <h2 className="mb-3">
+        <h3 className="mb-3">
           Loews Royal Pacific Resort at Universal Orlando
-        </h2>
+        </h3>
+        
 
         <h4 className="col-lg-10 col-12 black text-center">
           6300 Hollywood Way Orlando, FL 32819
