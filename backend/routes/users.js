@@ -15,7 +15,15 @@ router.post('/login', async function (req, res) {
 
 		var user = await User.findOne({ googleId });
 		if (user) {
-			return res.status(200).json({ email, name, googleId, imageUrl });
+			return res
+				.status(200)
+				.json({
+					email,
+					name,
+					googleId,
+					imageUrl,
+					isRegistered: user.isRegistered,
+				});
 		} else {
 			const newUser = {
 				email,
@@ -24,9 +32,12 @@ router.post('/login', async function (req, res) {
 				googleId,
 				imageUrl,
 				displayName: name,
+				isRegistered: false,
 			};
 			user = await User.create(newUser);
-			return res.status(200).json({ email, name, googleId, imageUrl });
+			return res
+				.status(200)
+				.json({ email, name, googleId, imageUrl, isRegistered: false });
 		}
 	} catch (err) {
 		console.error(err);

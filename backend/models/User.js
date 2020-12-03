@@ -8,6 +8,7 @@ const userSchema = new Schema({
 	firstName: String,
 	lastName: String,
 	image: String,
+	isRegistered: Boolean,
 	created_at: {
 		type: Date,
 		default: Date.now,

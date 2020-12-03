@@ -35,14 +35,47 @@ export default function Signup(props) {
 	async function register() {
 		try {
 			const token = localStorage.getItem('token');
-			const headers = { token };
+			const headers = { Authorization: `Bearer ${token}` };
 			const googleId = localStorage.getItem('googleId');
 			const payload = {
-				givenName: fname,
-				familyName: lname,
+				firstName: fname,
+				lastName: lname,
 				email,
 				googleId,
 			};
+			console.log(token);
+			console.log(payload);
+			const res = await axios.post('http://localhost:5000/rsvp', payload, {
+				headers,
+			});
+			if (res.data.errors) {
+				console.log(res.data.errors);
+			} else {
+				setIsRegistered(true);
+				localStorage.setItem('isRegistered', 'true');
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	async function editrsvp() {
+		try {
+			const payload = {
+				email,
+				firstName: fname,
+				lastName: lname,
+				googleId: localStorage.getItem('googleId'),
+			};
+			console.log(payload);
+			const token = localStorage.getItem('token');
+			const headers = { Authorization: `Bearer ${token}` };
+			const url = `http://localhost:5000/rsvp/edit`;
+			const res = await axios.post(url, payload, { headers });
+			if (res.data.errors) {
+				console.log(res.data.errors);
+			}
+			setisediting(!isediting);
 		} catch (error) {
 			console.log(error);
 		}
@@ -84,17 +117,6 @@ export default function Signup(props) {
 							color: 'white',
 							borderRadius: '10px',
 						}}
-						// style={{
-						// 	position: 'absolute',
-						// 	top: '100px',
-						// 	display: 'flex',
-						// 	justifyContent: 'center',
-						// 	height: '80vh',
-						// 	width: '40%',
-						// 	backgroundColor: 'black',
-						// 	color: 'white',
-						// 	borderRadius: '10px',
-						// }}
 					>
 						<h3>Register Here</h3>
 						<form style={{ height: '360px', width: '480px', padding: '20px' }}>
@@ -140,48 +162,6 @@ export default function Signup(props) {
 								</button>
 							</div>
 						</form>
-						{/* <img
-							src={registerImg}
-							alt="register by clicking"
-							style={{ height: '360px', width: '480px', padding: '20px' }}
-							className="signup"
-							onClick={async () => {
-								try {
-									let response;
-									const email = localStorage.getItem('email');
-									const givenName = localStorage.getItem('givenName');
-									const familyName = localStorage.getItem('familyName');
-									const token = localStorage.getItem('token');
-									const googleId = localStorage.getItem('googleId');
-
-									const payload = {
-										email,
-										givenName,
-										familyName,
-										googleId,
-									};
-									const config = {
-										headers: {
-											Authorization: `Bearer ${token}`,
-										},
-									};
-									if (process.env.NODE_ENV === 'production') {
-										response = await axios.post('/rsvp', payload, config);
-										console.log(response);
-									} else {
-										response = await axios.post(
-											'http://localhost:5000/rsvp',
-											payload,
-											config
-										);
-									}
-									localStorage.setItem('isRegistered', 'true');
-									setIsRegistered(true);
-								} catch (error) {
-									console.error(error);
-								}
-							}}
-						/> */}
 					</div>
 				) : (
 					<div
@@ -195,25 +175,28 @@ export default function Signup(props) {
 					>
 						<div style={{ display: 'flex' }}>
 							<div>
-								<div
-									style={{
-										padding: '50px',
-										backgroundColor: 'black',
-										color: 'white',
-									}}
-								>
-									<h1>Registered For</h1>
-									<img
-										src="https://d1zmiyu61cpipt.cloudfront.net/assets/images/ubif_logo_dark.svg"
-										alt="logo"
-									/>
-									<h1>SUMMIT 2021</h1>
-								</div>
+								{!isediting ? (
+									<div
+										style={{
+											padding: '50px',
+											backgroundColor: 'black',
+											color: 'white',
+										}}
+									>
+										<h1>Registered For</h1>
+										<img
+											src="https://d1zmiyu61cpipt.cloudfront.net/assets/images/ubif_logo_dark.svg"
+											alt="logo"
+										/>
+										<h1>SUMMIT 2021</h1>
+									</div>
+								) : null}
 								{!isediting ? (
 									<div style={{ display: 'flex', justifyContent: 'center' }}>
 										<button
+											type="button"
 											className="btn btn-success"
-											onClick={() => setisediting(true)}
+											onClick={() => setisediting(!isediting)}
 										>
 											Edit
 										</button>
@@ -222,16 +205,18 @@ export default function Signup(props) {
 							</div>
 							{isediting ? (
 								<div>
-									<h3 style={{ textAlign: 'center' }}>Edit you registration</h3>
 									<form
 										style={{
-											// height: '360px',
-											// width: '480px',
-											// padding: '20px',
+											height: '360px',
+											width: '480px',
+											padding: '20px',
 											backgroundColor: 'black',
 											color: 'white',
 										}}
 									>
+										<h3 style={{ textAlign: 'center', marginBottom: '10px' }}>
+											Edit Your Registration
+										</h3>
 										<div className="form-row">
 											<div className="form-group col-md-6">
 												<label for="first name">First Name</label>
@@ -264,16 +249,22 @@ export default function Signup(props) {
 												onChange={(e) => setemail(e.target.value)}
 											/>
 										</div>
-										<div style={{ display: 'flex', justifyContent: 'center' }}>
-											<button
-												type="button"
-												className="btn btn-primary"
-												onClick={() => register()}
-											>
-												Edit
-											</button>
-										</div>
 									</form>
+									<div style={{ display: 'flex', justifyContent: 'center' }}>
+										<button
+											type="button"
+											className="btn btn-success"
+											onClick={() => editrsvp()}
+										>
+											Edit
+										</button>
+										<button
+											className="btn btn-secondary"
+											onClick={() => setisediting(!isediting)}
+										>
+											cancel
+										</button>
+									</div>
 								</div>
 							) : null}
 						</div>

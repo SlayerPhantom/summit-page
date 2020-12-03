@@ -11,17 +11,19 @@ const { validateEmail } = require('../utils/validation.js');
 router.post('/', isAuthenticated, async (req, res) => {
 	try {
 		const { email, firstName, lastName, googleId } = req.body;
-		if (
-			email.trim() === '' ||
-			firstName.trim() === '' ||
-			lastName.trim() === ''
-		)
-			return res.status(400).json('All fields are required');
+		// if (
+		// 	email.trim() === '' ||
+		// 	firstName.trim() === '' ||
+		// 	lastName.trim() === ''
+		// )
+		// 	return res.status(400).json('All fields are required');
 
 		const { valid, errors } = validateEmail(email);
 		if (!valid) return res.status(400).json({ errors });
 
 		const user = await User.findOne({ googleId });
+		user.isRegistered = true;
+		await user.save();
 		if (user) {
 			const rsvp = await RSVP.findOne({ googleId });
 			if (rsvp)
@@ -29,15 +31,15 @@ router.post('/', isAuthenticated, async (req, res) => {
 			else {
 				const newRSVP = { email, firstName, lastName, googleId };
 				const result = await RSVP.create(newRSVP);
-				return res.status(201).json({
+				return res.json({
 					success: `${firstName} ${lastName} successfully registered`,
 				});
 			}
 		} else {
-			res.status(400).json({ error: 'No user with this googleId exists' });
+			res.json({ error: 'No user with this googleId exists' });
 		}
 	} catch (err) {
-		res.status(400).json({ error: err });
+		res.json({ error: err });
 	}
 });
 
@@ -67,10 +69,10 @@ router.post('/edit', isAuthenticated, async (req, res) => {
 			firstName.trim() === '' ||
 			lastName.trim() === ''
 		)
-			return res.status(400).json('All fields are required');
+			return res.json('All fields are required');
 
 		const { valid, errors } = validateEmail(email);
-		if (!valid) return res.status(400).json({ errors });
+		if (!valid) return res.json({ errors });
 
 		const user = await User.findOne({ googleId });
 
@@ -85,15 +87,13 @@ router.post('/edit', isAuthenticated, async (req, res) => {
 				});
 				await rsvp.save();
 			} else {
-				res
-					.status(400)
-					.json({ error: 'this account is not registered for the event' });
+				res.json({ error: 'this account is not registered for the event' });
 			}
 		} else {
 			throw new Error('No user with this ID exists');
 		}
 	} catch (err) {
-		res.status(400).json({ error: 'something went wrong' });
+		res.json({ error: 'something went wrong' });
 	}
 });
 
