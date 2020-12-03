@@ -27,12 +27,12 @@ export default function Signup(props) {
   useEffect(() => {
     const onload = async () => {
       try {
-        setIsRegistered(localStorage.getItem("isRegistered") == "true");
+        setIsRegistered(localStorage.getItem("isRegistered") === "false");
 
         setfname(localStorage.getItem("givenName"));
         setlname(localStorage.getItem("familyName"));
         setemail(localStorage.getItem("email"));
-        if (localStorage.getItem("isRegistered") == "true") {
+        if (localStorage.getItem("isRegistered") === "true") {
           const token = localStorage.getItem("token");
           const payload = { googleId: localStorage.getItem("googleId") };
           const headers = { Authorization: `Bearer ${token}` };
@@ -80,7 +80,12 @@ export default function Signup(props) {
         setIsRegistered(true);
         localStorage.setItem("isRegistered", "true");
       }
+      window.alert("Success, you have registered for the event.");
+      window.location.refresh("/");
     } catch (error) {
+      window.alert(
+        "Could not register your account. Please check your information and try again."
+      );
       console.log(error);
     }
   }
