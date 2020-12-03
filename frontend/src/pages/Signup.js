@@ -3,17 +3,8 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import '../css/style.css';
 import '../css/Signup.css';
-import registerImg from '../images/register.jpg';
-import {
-	Button,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	FormText,
-	Row,
-	Col,
-} from 'reactstrap';
+
+import buildURL from '../utils/buildURL';
 
 export default function Signup(props) {
 	const [isRegistered, setIsRegistered] = useState(false);
@@ -30,11 +21,12 @@ export default function Signup(props) {
 				setfname(localStorage.getItem('givenName'));
 				setlname(localStorage.getItem('familyName'));
 				setemail(localStorage.getItem('email'));
-				if (!localStorage.getItem('isRegistered') === 'false') {
+				if (localStorage.getItem('isRegistered') === 'true') {
 					const token = localStorage.getItem('token');
 					const payload = { googleId: localStorage.getItem('googleId') };
 					const headers = { Authorization: `Bearer ${token}` };
-					const res = await axios.post('/getrsvp', payload, { headers });
+					const url = buildURL('rsvp/getrsvp');
+					const res = await axios.post(url, payload, { headers });
 					if (res.data.errors) {
 						console.log(res.data.errors);
 						return;
@@ -63,7 +55,8 @@ export default function Signup(props) {
 			};
 			console.log(token);
 			console.log(payload);
-			const res = await axios.post('http://localhost:5000/rsvp', payload, {
+			const url = buildURL('rsvp');
+			const res = await axios.post(url, payload, {
 				headers,
 			});
 			if (res.data.errors) {
@@ -88,7 +81,7 @@ export default function Signup(props) {
 			console.log(payload);
 			const token = localStorage.getItem('token');
 			const headers = { Authorization: `Bearer ${token}` };
-			const url = `http://localhost:5000/rsvp/edit`;
+			const url = buildURL('rsvp/edit');
 			const res = await axios.post(url, payload, { headers });
 			if (res.data.errors) {
 				console.log(res.data.errors);

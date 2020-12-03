@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 
 import axios from 'axios';
-
+import buildURL from '../utils/buildURL';
 export default function GoogleAuth({
 	showLogin,
 	loginText,
@@ -29,21 +29,15 @@ export default function GoogleAuth({
 			localStorage.setItem('name', name);
 			localStorage.setItem('token', tokenObj.id_token);
 			localStorage.setItem('isAuthenticated', true);
+			const url = buildURL('login');
+			const res = await axios.post('/login', {
+				user,
+			});
+			if (res.data.isRegistered === false)
+				localStorage.setItem('isRegistered', 'false');
+			else localStorage.setItem('isRegistered', 'true');
 
-			if (process.env.NODE_ENV === 'production') {
-				const res = await axios.post('/login', {
-					user,
-				});
-				if (res.data.isRegistered === false)
-					localStorage.setItem('isRegistered', 'false');
-				else localStorage.setItem('isRegistered', 'true');
-			} else {
-				const res = await axios.post('http://localhost:5000/login', user);
-				if (res.data.isRegistered === false)
-					localStorage.setItem('isRegistered', 'false');
-				else localStorage.setItem('isRegistered', 'true');
-			}
-			window.location.replace('http://localhost:3000/');
+			window.location.replace('/home');
 		} catch (error) {
 			console.error(error);
 		}
