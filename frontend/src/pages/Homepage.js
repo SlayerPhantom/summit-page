@@ -55,7 +55,6 @@ export default function Homepage() {
                   by our upper management.
                 </h5>
                 <div className="mt-3 d-flex justify-content-center">
-                  {/*
                   {isAuthenticated ? (
                     <GoogleLogout
                       clientId="899787207644-st7cehta2q31e1sp8804vg0q8ro5t94s.apps.googleusercontent.com"
@@ -65,7 +64,6 @@ export default function Homepage() {
                   ) : (
                     <GoogleAuth />
                   )}
-                  */}
                 </div>
               </div>
             </div>
