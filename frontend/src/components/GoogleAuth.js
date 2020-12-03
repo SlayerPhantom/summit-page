@@ -43,7 +43,7 @@ export default function GoogleAuth({
 					localStorage.setItem('isRegistered', 'false');
 				else localStorage.setItem('isRegistered', 'true');
 			}
-			window.location.replace('/events');
+			window.location.replace('http://localhost:3000/');
 		} catch (error) {
 			console.error(error);
 		}

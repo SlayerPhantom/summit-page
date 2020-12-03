@@ -22,14 +22,32 @@ export default function Signup(props) {
 	const [lname, setlname] = useState('');
 	const [isediting, setisediting] = useState(false);
 	useEffect(() => {
-		if (localStorage.getItem('isRegistered') === 'false')
-			setIsRegistered(false);
-		else setIsRegistered(true);
-		setfname(localStorage.getItem('givenName'));
-		setlname(localStorage.getItem('familyName'));
-		setemail(localStorage.getItem('email'));
-		if (fname == undefined) setfname('');
-		if (lname == undefined) setlname('');
+		const onload = async () => {
+			try {
+				if (localStorage.getItem('isRegistered') === 'false')
+					setIsRegistered(false);
+				else setIsRegistered(true);
+				setfname(localStorage.getItem('givenName'));
+				setlname(localStorage.getItem('familyName'));
+				setemail(localStorage.getItem('email'));
+				if (!localStorage.getItem('isRegistered') === 'false') {
+					const token = localStorage.getItem('token');
+					const payload = { googleId: localStorage.getItem('googleId') };
+					const headers = { Authorization: `Bearer ${token}` };
+					const res = await axios.post('/getrsvp', payload, { headers });
+					if (res.data.errors) {
+						console.log(res.data.errors);
+						return;
+					}
+					setfname(res.data.fname);
+					setlname(res.data.lname);
+					setemail(res.data.email);
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		onload();
 	}, []);
 
 	async function register() {

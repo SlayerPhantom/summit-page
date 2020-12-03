@@ -80,7 +80,7 @@ router.post('/edit', isAuthenticated, async (req, res) => {
 			const rsvp = await RSVP.findOne({ googleId });
 			if (rsvp) {
 				rsvp.overwrite({
-					googleId: req.user.googleId,
+					googleId: googleId,
 					email,
 					firstName,
 					lastName,
@@ -94,6 +94,23 @@ router.post('/edit', isAuthenticated, async (req, res) => {
 		}
 	} catch (err) {
 		res.json({ error: 'something went wrong' });
+	}
+});
+
+router.post('/getrsvp', isAuthenticated, async function (req, res) {
+	try {
+		const { googleId } = req.body;
+		const rsvp = await RSVP.findOne({ googleId });
+		if (!rsvp) {
+			return res.json({ errors: 'you are not registered' });
+		}
+		return res.json({
+			fname: rsvp.firstName,
+			lname: rsvp.lastName,
+			email: rsvp.email,
+		});
+	} catch (error) {
+		return res.json({ errors: error });
 	}
 });
 
