@@ -16,7 +16,7 @@ router.post('/', isAuthenticated, async (req, res) => {
 		 	firstName.trim() === '' ||
 		 	lastName.trim() === ''
 		 )
-		 	return res.json('All fields are required');
+		 	return res.json({errors: 'All fields are required'});
 
 		const { valid, errors } = validateEmail(email);
 		if (!valid) return res.json({ errors });
