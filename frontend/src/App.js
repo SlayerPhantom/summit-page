@@ -19,12 +19,14 @@ export default function App() {
       <Switch>
         <Route path="/" exact component={Homepage} />
 
- 
+	  {/*
         <Route path="/speakers" exact component={Speakers} />
         <Route path="/events" exact component={Events} />
         <Route path="/venue" exact component={Venue} />
         <Route path="/registerevents" exact component={Signup} />
         <Route path="/sponsors" exact component={Sponsors} />
+	
+	*/}
 				 
 	  {/*
         <ProtectedRoute path="/speakers" exact component={Speakers} />
