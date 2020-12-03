@@ -1,5 +1,5 @@
 function buildURL(path) {
-	return `https://ubreakifix2020.herokuapp.com/${path}`;
+	return `https://ubreakifix2020summit.herokuapp.com/${path}`;
 }
 
 module.exports = buildURL;
