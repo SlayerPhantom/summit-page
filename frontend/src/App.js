@@ -18,7 +18,6 @@ export default function App() {
       <CustomNavbar />
       <Switch>
         <Route path="/" exact component={Homepage} />
-        <Route path="/" component={PageNotFound} />
 
         {/* Swap back to protectedroutes when done testing*/}
         {/* <Route path="/speakers" exact component={Speakers} />
@@ -33,6 +32,7 @@ export default function App() {
         <ProtectedRoute path="/venue" exact component={Venue} />
         <ProtectedRoute path="/registerevents" exact component={Signup} />
         <ProtectedRoute path="/sponsors" exact component={Sponsors} />
+	  <Route path="/" component={PageNotFound} />
       </Switch>
       <CustomFooter />
     </Router>
