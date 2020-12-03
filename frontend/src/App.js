@@ -13,19 +13,11 @@ import Sponsors from "./pages/Sponsors";
 import "./css/style.css";
 
 export default function App() {
-<<<<<<< HEAD
   return (
     <Router>
       <CustomNavbar />
       <Switch>
         <Route path="/" exact component={Homepage} />
-=======
-	return (
-		<Router>
-			<CustomNavbar />
-			<Switch>
-				<Route path="/" exact component={Homepage} />
->>>>>>> ff712a1a8f3adc008c1932b3033526c4e0e00c48
 
         {/* Swap back to protectedroutes when done */}
         {/* <Route path="/speakers" exact component={Speakers} />
