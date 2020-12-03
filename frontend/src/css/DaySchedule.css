@@ -5,3 +5,9 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 750px) {
+  .eventCardWrapper {
+    margin-top: 5rem;
+  }
+}

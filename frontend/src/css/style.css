@@ -11,6 +11,13 @@ body {
   background-size: cover;
 }
 
+.greyBackground {
+  background-color: rgb(220, 220, 220);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 em {
   color: #3d52d5;
   font-size: 52;
