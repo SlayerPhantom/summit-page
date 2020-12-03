@@ -13,13 +13,8 @@ import Sponsors from './pages/Sponsors';
 import './css/style.css';
 
 export default function App() {
-	const [isloggedin, setisloggedin] = useState(false);
-	useEffect(() => {
-		if (localStorage.getItem('name')) setisloggedin(true);
-	});
 	return (
 		<Router>
-			{isloggedin ? <CustomNavbar /> : null}
 			<Switch>
 				<Route path="/" exact component={Homepage} />
 
