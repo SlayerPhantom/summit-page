@@ -22,7 +22,7 @@ export default function CustomNavbar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-    {/* {isAuthenticated && ( */}
+     {isAuthenticated && (
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/venue" className="navbarItem">
@@ -42,7 +42,7 @@ export default function CustomNavbar() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-    {/* )} */}
+     )}
     </Navbar>
   );
 }
