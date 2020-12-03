@@ -6,7 +6,7 @@ import venueImg from "../images/locations/venue.jpg";
 
 export default function Speakers() {
   return (
-    <div> {/*
+    <div> 
       <div className="background">
         <Container>
           <Container className="row top-section">
@@ -21,7 +21,6 @@ export default function Speakers() {
           </Container>
         </Container>
       </div>
-      */}
 
       <Container className="mt-3 mb-3 d-flex justify-content-center align-items-center flex-column textBlock">
         <h2 className="mb-3">
