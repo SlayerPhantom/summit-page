@@ -13,18 +13,15 @@ export default function Events() {
     <div>
       <div className="background">
         <Container>
-          <Container
-            className="row top-section justify-content-center align-middle"
-            style={{
-              height: "60vh",
-              lineHeight: "60vh",
-              textAlign: "center",
-              color: "white",
-              fontSize: "5rem",
-              fontWeight: "bold",
-            }}
-          >
-            Sponsors
+          <Container className="row top-section">
+            <div className="row vh-75 mb-5 top-section-2">
+              <div className="order-md-1 order-2 col-md-6 d-flex justify-content-center align-items-center">
+                {/* <Lottie options={speakerData} height={400} width={400} /> */}
+              </div>
+              <div className="main-content col-md-6 order-1 d-flex justify-content-center textBlock">
+                <h2>Sponsors</h2>
+              </div>
+            </div>
           </Container>
         </Container>
       </div>

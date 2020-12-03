@@ -31,18 +31,7 @@ export default function Speakers() {
                 <Lottie options={speakerData} height={400} width={400} />
               </div>
               <div className="main-content col-md-6 order-1 d-flex justify-content-center textBlock">
-                <h2
-                  style={{
-                    marginTop: "5rem",
-                    textAlign: "center",
-                    color: "white",
-                    fontSize: "5rem",
-                    fontWeight: "bold",
-                    fontFamily: "signika",
-                  }}
-                >
-                  Speakers
-                </h2>
+                <h2>Speakers</h2>
               </div>
             </div>
           </Container>

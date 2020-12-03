@@ -16,7 +16,7 @@ export default function DayOneSchedule() {
       <div className="scheduleWrapper">
         <Container>
           <Row className="justify-content-center">
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={lobby}
                 title={"Check in & Badge Pick-up"}
@@ -25,7 +25,7 @@ export default function DayOneSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={oceanaBallroom}
                 title={"Awards ceremony Dinner"}
@@ -34,7 +34,7 @@ export default function DayOneSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={promenade}
                 title={"Reception"}
@@ -45,7 +45,7 @@ export default function DayOneSchedule() {
           </Row>
 
           <Row className="mt-5">
-            <Col xs={4}>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={citywalk}
                 title={"Ferry to Universal Citywalk"}

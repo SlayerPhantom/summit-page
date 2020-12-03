@@ -17,7 +17,7 @@ export default function DayThreeSchedule() {
       <div className="scheduleWrapper">
         <Container>
           <Row className="justify-content-center">
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={oceanaBallroom}
                 title={"AMA with Justin, Dave & Eddie"}
@@ -26,7 +26,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={oceanaBallroom}
                 title={"Breakout Session"}
@@ -35,7 +35,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={oceanaBallroom}
                 title={"Workshop"}
@@ -46,7 +46,7 @@ export default function DayThreeSchedule() {
           </Row>
 
           <Row className="mt-5 justify-content-center">
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={loews1}
                 title={"Open Lunch Break"}
@@ -55,7 +55,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={oceanaBallroom}
                 title={"Breakout Session"}
@@ -64,7 +64,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={pacificaBallroom}
                 title={"Breakout Session"}
@@ -75,7 +75,7 @@ export default function DayThreeSchedule() {
           </Row>
 
           <Row className="mt-5 justify-content-center">
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={loews2}
                 title={"Intermission"}
@@ -84,7 +84,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={oceanaBallroom}
                 title={"Breakout Session"}
@@ -93,7 +93,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={pacificaBallroom}
                 title={"Breakout Session"}
@@ -104,7 +104,7 @@ export default function DayThreeSchedule() {
           </Row>
 
           <Row className="mt-5 justify-content-center">
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={loews3}
                 title={"Session"}
@@ -113,7 +113,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={shuttle}
                 title={"Shuttles to Dinner"}
@@ -122,7 +122,7 @@ export default function DayThreeSchedule() {
               ></EventCard>
             </Col>
 
-            <Col>
+            <Col xs={12} md={4} className="eventCardWrapper">
               <EventCard
                 photo={loews3}
                 title={"uBreakiFix Dinner"}
