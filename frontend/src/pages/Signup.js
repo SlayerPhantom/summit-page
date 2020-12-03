@@ -75,6 +75,9 @@ export default function Signup(props) {
       const res = await axios.post(url, payload, { headers });
 
       if (res.data.errors) {
+        window.alert(
+        "Could not register your account. Please check your information and try again."
+      );
         console.log(res.data.errors);
       } else {
         setIsRegistered(true);
