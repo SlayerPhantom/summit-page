@@ -11,12 +11,12 @@ const { validateEmail } = require('../utils/validation.js');
 router.post('/', isAuthenticated, async (req, res) => {
 	try {
 		const { email, firstName, lastName, googleId } = req.body;
-		// if (
-		// 	email.trim() === '' ||
-		// 	firstName.trim() === '' ||
-		// 	lastName.trim() === ''
-		// )
-		// 	return res.status(400).json('All fields are required');
+		if (
+		 	email.trim() === '' ||
+		 	firstName.trim() === '' ||
+		 	lastName.trim() === ''
+		 )
+		 	return res.json('All fields are required');
 
 		const { valid, errors } = validateEmail(email);
 		if (!valid) return res.json({ errors });
