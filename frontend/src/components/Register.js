@@ -44,6 +44,7 @@ export default function Register({
         <Form.Group controlId="formFirstName" className="formLabel">
           <Form.Label>First Name</Form.Label>
           <Form.Control
+            required
             type="textarea"
             placeholder="First Name"
             value={fname}
@@ -55,6 +56,7 @@ export default function Register({
         <Form.Group controlId="formLastName" className="formLabel">
           <Form.Label>Last Name</Form.Label>
           <Form.Control
+            required
             type="textarea"
             placeholder="Last Name"
             value={lname}
@@ -66,6 +68,7 @@ export default function Register({
         <Form.Group controlId="formEmail" className="formLabel">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
+            required
             type="email"
             placeholder="Email"
             value={email}
@@ -78,9 +81,16 @@ export default function Register({
         </Form.Group>
 
         <div className="d-flex justify-content-center">
-          <Button variant="danger" onClick={register}>
-            {registerText}
-          </Button>
+          {fname && lname && email && (
+            <Button variant="danger" onClick={register}>
+              {registerText}
+            </Button>
+          )}
+          {(!fname || !lname || !email) && (
+            <Button variant="danger" onClick={register} disabled>
+              {registerText}
+            </Button>
+          )}
         </div>
       </Form>
     </Container>
